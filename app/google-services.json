@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "135212918914",
+    "project_id": "gmrbus-903f6",
+    "storage_bucket": "gmrbus-903f6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:135212918914:android:36a14788fd42e8691e2c9b",
+        "android_client_info": {
+          "package_name": "com.example.gmrbus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "135212918914-ufg4krqqp3ivh38s4lpt23vu4j02nuut.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvxNtYg_k1ozPjPZm2OArcE3qtWuRKb4c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "135212918914-ufg4krqqp3ivh38s4lpt23vu4j02nuut.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

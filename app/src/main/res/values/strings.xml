@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">GMRBus</string>
+    <string-array name="year_of_study">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+    <string-array name="department">
+        <item>IT</item>
+        <item>CSE</item>
+        <item>MECHANICAL</item>
+        <item>EEE</item>
+        <item>ECE</item>
+        <item>CHEMICAL</item>
+    </string-array>
+
+</resources>

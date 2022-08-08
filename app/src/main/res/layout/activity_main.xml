@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#bbdefb"
+    tools:context=".MainActivity">
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gifBus"
+        android:layout_width="330dp"
+        android:layout_height="320dp"
+        android:layout_marginTop="280dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/giphy" />
+
+    <ImageView
+        android:id="@+id/imgGmr"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/gmrlogo" />
+
+    <TextView
+        android:layout_width="220dp"
+        android:layout_height="80dp"
+        android:layout_below="@+id/imgGmr"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="120dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="BUSES"
+        android:textColor="#293462"
+        android:textSize="70sp"
+        android:textStyle="bold" />
+
+</RelativeLayout>
