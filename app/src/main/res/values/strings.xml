@@ -16,4 +16,10 @@
         <item>CHEMICAL</item>
     </string-array>
 
+    <string-array name="busroute">
+        <item>SRIKAKULAM</item>
+        <item>VIZAINAGARAM</item>
+        <item>BOBBILI</item>
+    </string-array>
+
 </resources>

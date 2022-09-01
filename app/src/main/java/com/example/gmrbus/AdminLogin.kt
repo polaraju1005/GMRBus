@@ -33,6 +33,10 @@ class AdminLogin : AppCompatActivity() {
         loginBtn.setOnClickListener {
             startActivity(Intent(this,AdminDashboard::class.java))
         }
+
+        signUp.setOnClickListener {
+            startActivity(Intent(this,AdminRegisterActivity::class.java))
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {
