@@ -11,14 +11,14 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/imgGMR"
+            android:id="@+id/adImgGMR"
             android:layout_width="100dp"
             android:layout_height="70dp"
             android:layout_marginLeft="70dp"
             android:layout_marginTop="30dp"
             android:src="@drawable/gmrlogo" />
         <TextView
-            android:id="@+id/txtBuses"
+            android:id="@+id/adTxtBuses"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="180dp"
@@ -38,7 +38,7 @@
             android:src="@drawable/signup" />
 
         <TextView
-            android:id="@+id/txtHey"
+            android:id="@+id/adTxtHey"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -49,7 +49,7 @@
             android:textSize="30sp"
             android:textStyle="bold" />
         <EditText
-            android:id="@+id/etEmail"
+            android:id="@+id/etAdminEmail"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -63,7 +63,7 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/etUsername"
+            android:id="@+id/etAdminName"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -76,7 +76,7 @@
             android:padding="10dp"
             android:textStyle="bold" />
         <EditText
-            android:id="@+id/etPersonalPhn"
+            android:id="@+id/etAdminPhn"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -94,7 +94,7 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/etPersonalPhn"
+            android:layout_below="@+id/etAdminPhn"
             android:layout_centerHorizontal="true">
 
             <AutoCompleteTextView
@@ -111,7 +111,7 @@
 
 
         <EditText
-            android:id="@+id/etPassword"
+            android:id="@+id/etAdPassword"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -126,7 +126,7 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/etCnfPassword"
+            android:id="@+id/etAdCnfPassword"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -141,7 +141,7 @@
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/btnRegister"
+            android:id="@+id/btnAdRegister"
             android:layout_width="160dp"
             android:layout_height="55dp"
             android:layout_centerHorizontal="true"
