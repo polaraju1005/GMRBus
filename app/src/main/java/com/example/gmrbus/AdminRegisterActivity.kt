@@ -84,7 +84,6 @@ class AdminRegisterActivity : AppCompatActivity() {
                 next()
             }
         }
-
     }
 
     private fun next() {
