@@ -52,7 +52,7 @@ class StudentDashboard : AppCompatActivity() {
 
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.dashboard,menu)
         return super.onCreateOptionsMenu(menu)
     }

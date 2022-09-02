@@ -96,4 +96,4 @@ class AdminRegisterActivity : AppCompatActivity() {
         return true
     }
 
-    }
+}
