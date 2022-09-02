@@ -104,11 +104,11 @@ class AdminRegisterActivity : AppCompatActivity() {
                 userHashMap["username"] = edtAdminName.text.toString().trim { it <= ' ' }
                 userHashMap["email"] = edtAdminEmail.text.toString().trim { it <= ' ' }
                 userHashMap["phone"] = etAdminPhone.text.toString().trim { it <= ' ' }
-                userHashMap["busRoute"] = busroute
+                userHashMap["busRoute"] = busroute.editText.toString()
                 refUsers.updateChildren(userHashMap).addOnCompleteListener {task->
                     if (task.isSuccessful){
                         Toast.makeText(this,"User registration successful!",Toast.LENGTH_SHORT).show()
-                        startActivity(Intent(this,RegisterSplashScreen::class.java))
+                        startActivity(Intent(this,AdminLogin::class.java))
                     }
                 }
             }else{
