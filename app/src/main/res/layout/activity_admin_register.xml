@@ -130,7 +130,7 @@
             android:layout_width="320dp"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="630dp"
+            android:layout_marginTop="625dp"
             android:background="@drawable/input_bg"
             android:ems="10"
             android:fontFamily="@font/poppins_medium"
@@ -140,15 +140,17 @@
             android:textSize="16sp"
             android:textStyle="bold" />
 
-        <Button
+        <androidx.constraintlayout.utils.widget.MotionButton
             android:id="@+id/btnAdRegister"
             android:layout_width="160dp"
             android:layout_height="55dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="680dp"
+            android:layout_marginTop="685dp"
             android:layout_marginBottom="30dp"
+            android:background="@drawable/gradient_button"
             android:fontFamily="@font/poppins_medium"
             android:text="REGISTER"
+            android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
 

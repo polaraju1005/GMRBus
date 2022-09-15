@@ -177,15 +177,17 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <Button
+        <androidx.constraintlayout.utils.widget.MotionButton
             android:id="@+id/btnRegister"
             android:layout_width="160dp"
             android:layout_height="55dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="820dp"
             android:layout_marginBottom="30dp"
+            android:background="@drawable/gradient_button"
             android:fontFamily="@font/poppins_medium"
             android:text="REGISTER"
+            android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
     </RelativeLayout>

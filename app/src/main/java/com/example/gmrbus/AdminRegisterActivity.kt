@@ -31,9 +31,9 @@ class AdminRegisterActivity : AppCompatActivity() {
     lateinit var password: String
     lateinit var confirmPassword: String
     lateinit var personalPhone: String
-    lateinit var auth:FirebaseAuth
-    private var firebaseUserId:String= ""
-    lateinit var refUsers:DatabaseReference
+    lateinit var auth: FirebaseAuth
+    private var firebaseUserId: String = ""
+    lateinit var refUsers: DatabaseReference
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -95,26 +95,32 @@ class AdminRegisterActivity : AppCompatActivity() {
     }
 
     private operator fun next() {
-        auth.createUserWithEmailAndPassword(mail,password).addOnCompleteListener(this@AdminRegisterActivity) { task->
-            if(task.isSuccessful){
-                firebaseUserId = auth.currentUser!!.uid
-                refUsers = FirebaseDatabase.getInstance().reference.child("Users").child(firebaseUserId)
-                val userHashMap = HashMap<String,Any>()
-                userHashMap["uid"] = firebaseUserId
-                userHashMap["username"] = edtAdminName.text.toString().trim { it <= ' ' }
-                userHashMap["email"] = edtAdminEmail.text.toString().trim { it <= ' ' }
-                userHashMap["phone"] = etAdminPhone.text.toString().trim { it <= ' ' }
-                userHashMap["busRoute"] = busroute.editText.toString()
-                refUsers.updateChildren(userHashMap).addOnCompleteListener {task->
-                    if (task.isSuccessful){
-                        Toast.makeText(this,"User registration successful!",Toast.LENGTH_SHORT).show()
-                        startActivity(Intent(this,AdminLogin::class.java))
+        auth.createUserWithEmailAndPassword(mail, password)
+            .addOnCompleteListener(this@AdminRegisterActivity) { task ->
+                if (task.isSuccessful) {
+                    firebaseUserId = auth.currentUser!!.uid
+                    refUsers = FirebaseDatabase.getInstance().reference.child("Admins")
+                        .child(firebaseUserId)
+                    val userHashMap = HashMap<String, Any>()
+                    userHashMap["uid"] = firebaseUserId
+                    userHashMap["username"] = edtAdminName.text.toString().trim { it <= ' ' }
+                    userHashMap["email"] = edtAdminEmail.text.toString().trim { it <= ' ' }
+                    userHashMap["phone"] = etAdminPhone.text.toString().trim { it <= ' ' }
+                    userHashMap["busRoute"] = busroute.editText!!.text.toString()
+                    refUsers.updateChildren(userHashMap).addOnCompleteListener { task ->
+                        if (task.isSuccessful) {
+                            Toast.makeText(
+                                this,
+                                "User registration successful!",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                            startActivity(Intent(this, AdminLogin::class.java))
+                        }
                     }
+                } else {
+                    Toast.makeText(this, "Something went wrong", Toast.LENGTH_SHORT).show()
                 }
-            }else{
-                Toast.makeText(this,"Something went wrong",Toast.LENGTH_SHORT).show()
             }
-        }
     }
 
     override fun onSupportNavigateUp(): Boolean {
