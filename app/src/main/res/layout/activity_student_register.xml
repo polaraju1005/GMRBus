@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -14,7 +13,7 @@
             android:id="@+id/imgGMR"
             android:layout_width="100dp"
             android:layout_height="70dp"
-            android:layout_marginLeft="70dp"
+            android:layout_marginStart="70dp"
             android:layout_marginTop="30dp"
             android:src="@drawable/gmrlogo" />
 
@@ -22,7 +21,7 @@
             android:id="@+id/txtBuses"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="180dp"
+            android:layout_marginStart="180dp"
             android:layout_marginTop="35dp"
             android:fontFamily="@font/poppins_medium"
             android:text="BUSES"
@@ -83,7 +82,7 @@
             android:layout_width="320dp"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="700dp"
+            android:layout_marginTop="765dp"
             android:background="@drawable/input_bg"
             android:ems="10"
             android:fontFamily="@font/poppins_medium"
@@ -98,7 +97,7 @@
             android:layout_width="320dp"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="755dp"
+            android:layout_marginTop="818dp"
             android:background="@drawable/input_bg"
             android:ems="10"
             android:fontFamily="@font/poppins_medium"
@@ -177,12 +176,32 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/dropdownAdmin"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dropdownDepartment"
+            android:layout_centerHorizontal="true">
+
+            <AutoCompleteTextView
+                android:id="@+id/autoCompleteTextView3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:ems="10"
+                android:fontFamily="@font/poppins_medium"
+                android:inputType="none"
+                android:text="Coordinator" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
         <androidx.constraintlayout.utils.widget.MotionButton
             android:id="@+id/btnRegister"
             android:layout_width="160dp"
             android:layout_height="55dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="820dp"
+            android:layout_marginTop="868dp"
             android:layout_marginBottom="30dp"
             android:background="@drawable/gradient_button"
             android:fontFamily="@font/poppins_medium"

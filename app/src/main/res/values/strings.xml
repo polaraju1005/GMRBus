@@ -23,4 +23,14 @@
         <item>BOBBILI</item>
     </string-array>
 
+    <string-array name="coordinator">
+        <item>Admin1</item>
+        <item>Admin2</item>
+        <item>Admin3</item>
+    </string-array>
+
+    <string name="Admin1">BcFAVCqDXScTCghYgMwDMiJnX372</string>
+    <string name="Admin2">QXdPWE6QW6eYOZtBZCh7YKEOjNk1</string>
+    <string name="Admin3">oh2RSmyU8fWU3ihdHGChjvpJ2Ad2</string>
+
 </resources>

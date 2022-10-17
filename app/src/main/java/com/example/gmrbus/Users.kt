@@ -15,7 +15,7 @@ class Users {
         email: String,
         phone: String,
         password: String,
-        busRoute: String
+        busRoute: String,
     ) {
         this.uid = uid
         this.username = username
@@ -64,4 +64,5 @@ class Users {
     fun setBusRoute(busRoute: String) {
         this.busRoute = busRoute
     }
+
 }

@@ -1,13 +1,15 @@
 package com.example.gmrbus
 
+import android.content.Intent
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.*
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.TextInputLayout
-import org.w3c.dom.Text
-import java.time.temporal.TemporalAdjusters.next
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 
 class StudentRegisterActivity : AppCompatActivity() {
     lateinit var logo: ImageView
@@ -17,9 +19,10 @@ class StudentRegisterActivity : AppCompatActivity() {
     private lateinit var edtUserName: EditText
     private lateinit var edtEmail: EditText
     lateinit var etParentPhone: EditText
-    lateinit var etPersonalPhone: EditText
-    lateinit var yos: TextInputLayout
+    private lateinit var etPersonalPhone: EditText
+    private lateinit var yos: TextInputLayout
     private lateinit var department: TextInputLayout
+    lateinit var coordinator: TextInputLayout
     private lateinit var etpassword: EditText
     lateinit var etConfirmPassword: EditText
     lateinit var register: Button
@@ -29,6 +32,10 @@ class StudentRegisterActivity : AppCompatActivity() {
     lateinit var confirmPassword: String
     lateinit var parentPhone: String
     lateinit var personalPhone: String
+    lateinit var refusers: DatabaseReference
+    private var firebaseUserId: String = ""
+    private var adminUserId: String = ""
+    lateinit var auth: FirebaseAuth
 
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -49,22 +56,28 @@ class StudentRegisterActivity : AppCompatActivity() {
         etParentPhone = findViewById(R.id.etParentPhn)
         etPersonalPhone = findViewById(R.id.etPersonalPhn)
         yos = findViewById(R.id.dropdown)
+        coordinator = findViewById(R.id.dropdownAdmin)
         department = findViewById(R.id.dropdownDepartment)
         etpassword = findViewById(R.id.etPassword)
         etConfirmPassword = findViewById(R.id.etCnfPassword)
         register = findViewById(R.id.btnRegister)
+        auth = FirebaseAuth.getInstance()
 
         val years = resources.getStringArray(R.array.year_of_study)
         val departments = resources.getStringArray(R.array.department)
+        val admins = resources.getStringArray(R.array.coordinator)
 
         val arrayAdapter = ArrayAdapter(this, R.layout.dropdown_item, years)
         val arrayAdapterTwo = ArrayAdapter(this, R.layout.department_dropdown, departments)
+        val arrayAdapterThree = ArrayAdapter(this, R.layout.dropdown_admin, admins)
 
         val autocompleteTV = findViewById<AutoCompleteTextView>(R.id.autoCompleteTextView)
         val autoCompleteTV2 = findViewById<AutoCompleteTextView>(R.id.autoCompleteTextView2)
+        val autoCompleteTV3 = findViewById<AutoCompleteTextView>(R.id.autoCompleteTextView3)
 
         autocompleteTV.setAdapter(arrayAdapter)
         autoCompleteTV2.setAdapter(arrayAdapterTwo)
+        autoCompleteTV3.setAdapter(arrayAdapterThree)
 
         register.setOnClickListener {
             name = edtUserName.text.toString().trim { it <= ' ' }
@@ -102,8 +115,38 @@ class StudentRegisterActivity : AppCompatActivity() {
 
     }
 
-    private fun next() {
-        Toast.makeText(this, "Registered", Toast.LENGTH_SHORT).show()
+    private operator fun next() {
+        auth.createUserWithEmailAndPassword(mail, password)
+            .addOnCompleteListener(this@StudentRegisterActivity) { task ->
+                if (task.isSuccessful) {
+                    firebaseUserId = auth.currentUser!!.uid
+                    adminUserId = coordinator.editText!!.text.toString()
+                    refusers =
+                        FirebaseDatabase.getInstance().reference.child("Users").child(adminUserId)
+                            .child(firebaseUserId)
+                    val userHashMap = HashMap<String, Any>()
+                    userHashMap["uid"] = firebaseUserId
+                    userHashMap["username"] = edtUserName.text.toString().trim { it <= ' ' }
+                    userHashMap["email"] = edtEmail.text.toString().trim { it <= ' ' }
+                    userHashMap["parentPhone"] = etParentPhone.text.toString().trim { it <= ' ' }
+                    userHashMap["phone"] = etPersonalPhone.text.toString().trim { it <= ' ' }
+                    userHashMap["yos"] = yos.editText!!.text.toString()
+                    userHashMap["department"] = department.editText!!.text.toString()
+                    userHashMap["coordinator"] = coordinator.editText!!.text.toString()
+                    refusers.updateChildren(userHashMap).addOnCompleteListener { task ->
+                        if (task.isSuccessful) {
+                            Toast.makeText(
+                                this,
+                                "User registration successful!",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                            startActivity(Intent(this,StudentLogin::class.java))
+                        }
+                    }
+                } else {
+                    Toast.makeText(this, "Something went wrong", Toast.LENGTH_SHORT).show()
+                }
+            }
     }
 
     override fun onSupportNavigateUp(): Boolean {

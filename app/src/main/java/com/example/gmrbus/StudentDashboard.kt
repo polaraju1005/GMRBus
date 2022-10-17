@@ -15,7 +15,7 @@ class StudentDashboard : AppCompatActivity() {
     lateinit var textStuName:TextView
     lateinit var btnScan:Button
     lateinit var btnTrack:Button
-    lateinit var btnPay:Button
+    lateinit var btnBooking:Button
     lateinit var btnData:Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,7 +27,7 @@ class StudentDashboard : AppCompatActivity() {
         textStuName = findViewById(R.id.txtStudentName)
         btnScan = findViewById(R.id.btnScan)
         btnTrack = findViewById(R.id.btnTrack)
-        btnPay = findViewById(R.id.btnPayment)
+        btnBooking = findViewById(R.id.btnPayment)
         btnData = findViewById(R.id.btnDetails)
 
 
@@ -39,7 +39,7 @@ class StudentDashboard : AppCompatActivity() {
             Toast.makeText(this,"Coming Soon",Toast.LENGTH_SHORT).show()
         }
 
-        btnPay.setOnClickListener {
+        btnBooking.setOnClickListener {
             val openURL = Intent(android.content.Intent.ACTION_VIEW)
             openURL.data = Uri.parse("https://gmrit.edu.in/payments/")
             startActivity(openURL)

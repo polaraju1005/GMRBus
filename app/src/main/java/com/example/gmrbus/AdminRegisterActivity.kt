@@ -127,5 +127,4 @@ class AdminRegisterActivity : AppCompatActivity() {
         onBackPressed()
         return true
     }
-
 }
