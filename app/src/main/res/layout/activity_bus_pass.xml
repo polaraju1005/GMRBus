@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".BusPassActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_margin="20dp">
+
+        <TextView
+            android:id="@+id/txtSeatConfirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Seat Confirmed"
+            android:textColor="#55FA55"
+            android:textSize="30sp" />
+
+        <ImageView
+            android:layout_width="1000dp"
+            android:layout_height="1000dp"
+            android:layout_below="@+id/txtSeatConfirm"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/ic_baseline_done_outline_24"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/txtBusPass"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp">
+
+        <ImageView
+            android:id="@+id/imgGMRLogo"
+            android:layout_width="400dp"
+            android:layout_height="100dp"
+            android:src="@drawable/gmrit" />
+
+        <TextView
+            android:id="@+id/txtNamePass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imgGMRLogo"
+            android:layout_marginLeft="20dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Name:"
+            android:textSize="30sp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/txtNamePassValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imgGMRLogo"
+            android:layout_marginLeft="31dp"
+            android:layout_marginTop="6dp"
+            android:layout_toRightOf="@+id/txtNamePass"
+            android:text="Polaraju"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/txtJNTUNOPass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtNamePass"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="JntuNo:"
+            android:textSize="30sp"
+            android:textColor="@color/black"/>
+
+
+        <TextView
+            android:id="@+id/txtJNTUNOPassValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtNamePassValue"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="17dp"
+            android:layout_toRightOf="@id/txtJNTUNOPass"
+            android:text="20341A12C7"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/txtBranchPass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtJNTUNOPass"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Branch:"
+            android:textSize="30sp"
+            android:textColor="@color/black"/>
+        <TextView
+            android:id="@+id/txtBranchPassValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtJNTUNOPassValue"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="17dp"
+            android:layout_toRightOf="@id/txtJNTUNOPass"
+            android:text="IT"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/txtPhNoPass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtBranchPass"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="PhNo:"
+            android:textSize="30sp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/txtPhNoPassValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtBranchPassValue"
+            android:layout_marginLeft="44dp"
+            android:layout_marginTop="19dp"
+            android:layout_toRightOf="@id/txtPhNoPass"
+            android:text="8919973758"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/txtRoutePass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtPhNoPass"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Route:"
+            android:textSize="30sp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/txtRoutePassValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtPhNoPassValue"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="22dp"
+            android:layout_toRightOf="@id/txtJNTUNOPass"
+            android:text="Srikakulam"
+            android:textSize="30sp" />
+        <androidx.constraintlayout.utils.widget.MotionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnBusPassDownload"
+            android:width="160dp"
+            android:height="55dp"
+            android:layout_centerHorizontal="true"
+            android:text="Download"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:fontFamily="@font/poppins_medium"
+            android:background="@drawable/gradient_button"
+            android:layout_below="@+id/txtRoutePass"
+            android:layout_marginTop="30dp"/>
+
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

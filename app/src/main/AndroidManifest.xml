@@ -19,6 +19,9 @@
         android:theme="@style/Theme.GMRBus"
         tools:targetApi="31">
         <activity
+            android:name=".BusPassActivity"
+            android:exported="false" />
+        <activity
             android:name=".BookingActivity"
             android:exported="false">
             <meta-data
