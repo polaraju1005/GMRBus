@@ -40,9 +40,7 @@ class StudentDashboard : AppCompatActivity() {
         }
 
         btnBooking.setOnClickListener {
-            val openURL = Intent(android.content.Intent.ACTION_VIEW)
-            openURL.data = Uri.parse("https://gmrit.edu.in/payments/")
-            startActivity(openURL)
+            startActivity(Intent(this,BookingActivity::class.java))
         }
 
         btnData.setOnClickListener {
