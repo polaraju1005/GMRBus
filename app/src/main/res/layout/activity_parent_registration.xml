@@ -77,13 +77,28 @@
             android:textStyle="bold" />
 
         <EditText
+            android:id="@+id/etParentRegMobNo"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/etParentRegEmail"
+            android:background="@drawable/input_bg"
+            android:layout_marginTop="15dp"
+            android:ems="10"
+            android:fontFamily="@font/poppins_medium"
+            android:hint="Mobile Number"
+            android:inputType="phone"
+            android:padding="10dp"
+            android:textStyle="bold" />
+
+        <EditText
             android:id="@+id/etParentRegPassword"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="15dp"
             android:background="@drawable/input_bg"
-            android:layout_below="@+id/etParentRegEmail"
+            android:layout_below="@+id/etParentRegMobNo"
             android:ems="10"
             android:fontFamily="@font/poppins_medium"
             android:hint="Password"
