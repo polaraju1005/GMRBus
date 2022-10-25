@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AdminRegisterActivity">
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    tools:context=".ParentRegistration">
 
         <ImageView
             android:id="@+id/adImgGMR"
@@ -17,6 +13,7 @@
             android:layout_marginLeft="70dp"
             android:layout_marginTop="30dp"
             android:src="@drawable/gmrlogo" />
+
         <TextView
             android:id="@+id/adTxtBuses"
             android:layout_width="wrap_content"
@@ -47,24 +44,11 @@
             android:text="HEY... SIGN UP !"
             android:textColor="@color/black"
             android:textSize="30sp"
+
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/etAdminEmail"
-            android:layout_width="320dp"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="390dp"
-            android:background="@drawable/input_bg"
-            android:ems="10"
-            android:fontFamily="@font/poppins_medium"
-            android:hint="Email I'd"
-            android:inputType="textEmailAddress"
-            android:padding="10dp"
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/etAdminName"
+            android:id="@+id/etParentRegName"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -78,84 +62,64 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/etAdminPhn"
+            android:id="@+id/etParentRegEmail"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="450dp"
+            android:layout_below="@+id/etParentRegName"
             android:background="@drawable/input_bg"
+            android:layout_marginTop="15dp"
             android:ems="10"
             android:fontFamily="@font/poppins_medium"
-            android:hint="Personal Contact Number"
-            android:inputType="phone"
+            android:hint="Email I'd"
+            android:inputType="textEmailAddress"
             android:padding="10dp"
             android:textStyle="bold" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/dropdownBusRoute"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-            android:layout_width="320dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/etAdminPhn"
-            android:layout_centerHorizontal="true">
-
-            <AutoCompleteTextView
-                android:id="@+id/autoCompleteTextView2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:ems="10"
-                android:fontFamily="@font/poppins_medium"
-                android:inputType="none"
-                android:text="BusRoute" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-
         <EditText
-            android:id="@+id/etAdPassword"
+            android:id="@+id/etParentRegPassword"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="570dp"
+            android:layout_marginTop="15dp"
             android:background="@drawable/input_bg"
+            android:layout_below="@+id/etParentRegEmail"
             android:ems="10"
             android:fontFamily="@font/poppins_medium"
             android:hint="Password"
             android:inputType="textPassword"
             android:padding="10dp"
-            android:textSize="16sp"
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/etAdCnfPassword"
+            android:id="@+id/etParentRegConfirmPassword"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="625dp"
+            android:layout_marginTop="15dp"
             android:background="@drawable/input_bg"
             android:ems="10"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/etParentRegPassword"
             android:fontFamily="@font/poppins_medium"
             android:hint="Confirm Password"
-            android:inputType="textPassword"
+            android:inputType="textPassword
+"
             android:padding="10dp"
-            android:textSize="16sp"
             android:textStyle="bold" />
 
         <androidx.constraintlayout.utils.widget.MotionButton
-            android:id="@+id/btnAdRegister"
+            android:id="@+id/btnParentRegister"
             android:layout_width="160dp"
             android:layout_height="55dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="685dp"
-            android:layout_marginBottom="30dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/gradient_button"
             android:fontFamily="@font/poppins_medium"
             android:text="REGISTER"
+            android:layout_below="@+id/etParentRegConfirmPassword"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
 
-    </RelativeLayout>
 
-</ScrollView>
+</RelativeLayout>

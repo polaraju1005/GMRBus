@@ -151,8 +151,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/txtPhNoPassValue"
-            android:layout_marginLeft="13dp"
-            android:layout_marginTop="22dp"
+            android:layout_marginLeft="11dp"
+            android:layout_marginTop="28dp"
             android:layout_toRightOf="@id/txtJNTUNOPass"
             android:text="Srikakulam"
             android:textSize="30sp" />

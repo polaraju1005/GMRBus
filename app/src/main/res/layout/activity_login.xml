@@ -11,7 +11,7 @@
         android:layout_width="200dp"
         android:layout_height="100dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="230dp"
+        android:layout_marginTop="110dp"
         android:background="@drawable/gradient_button"
         android:drawableRight="@drawable/adm"
         android:fontFamily="@font/poppins_medium"
@@ -26,13 +26,29 @@
         android:layout_height="100dp"
         android:layout_below="@+id/btnAdmin"
         android:layout_centerHorizontal="true"
-        android:drawableRight="@drawable/stu"
         android:layout_marginTop="100dp"
         android:background="@drawable/gradient_button"
+        android:drawableRight="@drawable/stu"
         android:fontFamily="@font/poppins_medium"
         android:text="Student login"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold" />
+
+    <androidx.constraintlayout.utils.widget.MotionButton
+        android:id="@+id/btnParent"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/btnStudent"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/gradient_button"
+        android:drawableRight="@drawable/parent"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Parent login"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        />
 
 </RelativeLayout>

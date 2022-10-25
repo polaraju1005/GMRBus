@@ -31,10 +31,16 @@
         <entry key="..\:/Users/velag/AndroidStudioProjects/GMRBus/app/src/main/res/drawable/gradient_button.xml" value="0.2265" />
         <entry key="..\:/Users/velag/AndroidStudioProjects/GMRBus/app/src/main/res/drawable/ic_baseline_done_outline_24.xml" value="0.236" />
         <entry key="..\:/Users/velag/AndroidStudioProjects/GMRBus/app/src/main/res/drawable/msgbox_bg.xml" value="0.2265" />
+        <entry key="..\:/Users/velag/AndroidStudioProjects/GMRBus/app/src/main/res/layout/activity_admin_dashboard.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/velag/AndroidStudioProjects/GMRBus/app/src/main/res/layout/activity_admin_login.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/velag/AndroidStudioProjects/GMRBus/app/src/main/res/layout/activity_admin_register.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/velag/AndroidStudioProjects/GMRBus/app/src/main/res/layout/activity_bus_info.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/velag/AndroidStudioProjects/GMRBus/app/src/main/res/layout/activity_bus_pass.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/velag/AndroidStudioProjects/GMRBus/app/src/main/res/layout/activity_login.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/velag/AndroidStudioProjects/GMRBus/app/src/main/res/layout/activity_parent_login.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/velag/AndroidStudioProjects/GMRBus/app/src/main/res/layout/activity_parent_registration.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/velag/AndroidStudioProjects/GMRBus/app/src/main/res/layout/activity_student_login.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/velag/AndroidStudioProjects/GMRBus/app/src/main/res/layout/activity_student_register.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/velag/AndroidStudioProjects/GMRBus/app/src/main/res/layout/department_dropdown.xml" value="0.22826086956521738" />
       </map>
     </option>
