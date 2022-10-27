@@ -28,7 +28,7 @@
         android:text="GMRITIAN"
         android:textColor="#0096FF"
         android:textSize="30sp"
-        android:textStyle="bold" />
+        android:textStyle="normal" />
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
@@ -125,5 +125,14 @@
         <!--            android:layout_marginLeft="60dp"/>-->
 
     </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/imgGmrStuDashLogo"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relativeLayout"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/gmritlogo" />
 
 </RelativeLayout>
