@@ -3,10 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AdminDashboard">
+    tools:context=".ParentDashboard">
 
     <TextView
-        android:id="@+id/txtAdminWelcome"
+        android:id="@+id/txtParentWelcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -18,25 +18,25 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/txtAdminName"
+        android:id="@+id/txtParentName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/txtAdminWelcome"
+        android:layout_below="@+id/txtParentWelcome"
         android:layout_marginStart="20dp"
         android:fontFamily="@font/poppins_medium"
-        android:text="Coordinator"
+        android:text="Parent"
         android:textColor="#0096FF"
         android:textSize="30sp"
         android:textStyle="normal" />
 
     <RelativeLayout
-        android:id="@+id/adminDashLayout"
+        android:id="@+id/ParDashLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="130dp">
 
         <androidx.constraintlayout.utils.widget.MotionButton
-            android:id="@+id/btnStuAttendance"
+            android:id="@+id/btnAdmData"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginStart="40dp"
@@ -46,34 +46,16 @@
             android:background="@drawable/gradient_button"
             android:fontFamily="@font/poppins_medium"
             android:padding="10dp"
-            android:text="Attendance"
-            android:textColor="@color/black"
-            android:textSize="25sp"
-            android:textStyle="normal" />
-
-
-        <androidx.constraintlayout.utils.widget.MotionButton
-            android:id="@+id/btnStuData"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_below="@+id/btnStuAttendance"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginEnd="40dp"
-            android:layout_marginBottom="40dp"
-            android:background="@drawable/gradient_button"
-            android:fontFamily="@font/poppins_medium"
-            android:padding="10dp"
-            android:text="Students Data"
+            android:text="Admin Data"
             android:textColor="@color/black"
             android:textSize="25sp"
             android:textStyle="normal" />
 
         <androidx.constraintlayout.utils.widget.MotionButton
-            android:id="@+id/btnStuPayment"
+            android:id="@+id/btnParentTrack"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:layout_below="@+id/btnStuData"
+            android:layout_below="@+id/btnAdmData"
             android:layout_marginStart="40dp"
             android:layout_marginTop="40dp"
             android:layout_marginEnd="40dp"
@@ -81,22 +63,20 @@
             android:background="@drawable/gradient_button"
             android:fontFamily="@font/poppins_medium"
             android:padding="10dp"
-            android:text="Payments Data"
+            android:text="Tracking"
             android:textColor="@color/black"
             android:textSize="25sp"
             android:textStyle="normal" />
 
     </RelativeLayout>
 
-
     <ImageView
         android:id="@+id/imgGmrAdDashLogo"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/adminDashLayout"
+        android:layout_below="@+id/ParDashLayout"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:src="@drawable/gmritlogo" />
-
 
 </RelativeLayout>
