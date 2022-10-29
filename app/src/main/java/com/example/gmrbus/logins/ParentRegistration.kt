@@ -1,17 +1,16 @@
-package com.example.gmrbus
+package com.example.gmrbus.logins
 
 import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ArrayAdapter
-import android.widget.AutoCompleteTextView
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import com.example.gmrbus.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -54,13 +53,6 @@ class ParentRegistration : AppCompatActivity() {
         PaRegister = findViewById(R.id.btnParentRegister)
         auth = FirebaseAuth.getInstance()
 
-        val busRoutes = resources.getStringArray(R.array.busroute)
-
-        val arrayAdapter3 = ArrayAdapter(this, R.layout.dropdown_busroute, busRoutes)
-
-        val autocompleteTV3 = findViewById<AutoCompleteTextView>(R.id.autoCompleteTextView)
-
-        autocompleteTV3.setAdapter(arrayAdapter3)
 
         PaRegister.setOnClickListener {
             name = edtParentName.text.toString().trim { it <= ' '}
@@ -103,7 +95,6 @@ class ParentRegistration : AppCompatActivity() {
                     userHashMap["username"] = edtParentName.text.toString().trim { it <= ' ' }
                     userHashMap["email"] = edtParentEmail.text.toString().trim { it <= ' ' }
                     userHashMap["phone"] = edtParentPhone.text.toString().trim { it <= ' ' }
-                    userHashMap["busRoute"] = busroute.editText!!.text.toString()
                     refUsers.updateChildren(userHashMap).addOnCompleteListener { task ->
                         if (task.isSuccessful) {
                             Toast.makeText(

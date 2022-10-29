@@ -1,7 +1,8 @@
-package com.example.gmrbus
+package com.example.gmrbus.dashboards.admin
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.gmrbus.R
 
 class AdminDashboard : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

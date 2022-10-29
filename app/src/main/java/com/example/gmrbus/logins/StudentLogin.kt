@@ -1,9 +1,11 @@
-package com.example.gmrbus
+package com.example.gmrbus.logins
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import com.example.gmrbus.R
+import com.example.gmrbus.dashboards.student.StudentDashboard
 import com.google.firebase.auth.FirebaseAuth
 
 class StudentLogin : AppCompatActivity() {
@@ -55,7 +57,7 @@ class StudentLogin : AppCompatActivity() {
         auth.signInWithEmailAndPassword(username,userPassword).addOnCompleteListener(this@StudentLogin) { task->
             if (task.isSuccessful){
                 Toast.makeText(this,"Logged in successfully !",Toast.LENGTH_SHORT).show()
-                startActivity(Intent(this,StudentDashboard::class.java))
+                startActivity(Intent(this, StudentDashboard::class.java))
             }else{
                 Toast.makeText(this,"Invalid Credentials",Toast.LENGTH_SHORT).show()
             }

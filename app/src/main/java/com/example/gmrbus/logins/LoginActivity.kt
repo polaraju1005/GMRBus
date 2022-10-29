@@ -1,9 +1,10 @@
-package com.example.gmrbus
+package com.example.gmrbus.logins
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import com.example.gmrbus.R
 
 class LoginActivity : AppCompatActivity() {
     lateinit var adminButton:Button
@@ -18,11 +19,11 @@ class LoginActivity : AppCompatActivity() {
         studentButton = findViewById(R.id.btnStudent)
 
         adminButton.setOnClickListener {
-            startActivity(Intent(this,AdminLogin::class.java))
+            startActivity(Intent(this, AdminLogin::class.java))
         }
 
         studentButton.setOnClickListener {
-            startActivity(Intent(this,StudentLogin::class.java))
+            startActivity(Intent(this, StudentLogin::class.java))
         }
     }
 }

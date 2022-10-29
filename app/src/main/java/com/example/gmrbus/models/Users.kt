@@ -1,4 +1,4 @@
-package com.example.gmrbus
+package com.example.gmrbus.models
 
 class Users {
     private var uid: String = ""

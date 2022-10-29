@@ -1,10 +1,11 @@
-package com.example.gmrbus
+package com.example.gmrbus.dashboards.student
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.gmrbus.R
 
 class BookingActivity : AppCompatActivity() {
     lateinit var booking: Button

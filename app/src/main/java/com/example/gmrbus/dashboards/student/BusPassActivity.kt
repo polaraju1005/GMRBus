@@ -1,9 +1,10 @@
-package com.example.gmrbus
+package com.example.gmrbus.dashboards.student
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
+import com.example.gmrbus.R
 
 class BusPassActivity : AppCompatActivity() {
     lateinit var downloadBusPass:Button

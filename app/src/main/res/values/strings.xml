@@ -33,4 +33,35 @@
     <string name="Admin2">QXdPWE6QW6eYOZtBZCh7YKEOjNk1</string>
     <string name="Admin3">oh2RSmyU8fWU3ihdHGChjvpJ2Ad2</string>
 
+
+    <string name="access_code">Access Code</string>
+    <string name="pay_opt">Payment Option</string>
+    <string name="card_type">Card Type</string>
+    <string name="pay_button">Pay</string>
+    <string name="next_button">Next</string>
+    <string name="name">Name</string>
+    <string name="address">Address</string>
+    <string name="country">Country</string>
+    <string name="billingAddress">Billing Address</string>
+    <string name="deliveryAddress">Delivery Address</string>
+    <string name="state">State</string>
+    <string name="city">City</string>
+    <string name="zip">Zip</string>
+    <string name="tel">Telephone</string>
+    <string name="email">Email Id</string>
+    <string name="merchant_id">Merchant Id</string>
+    <string name="currency">Currency</string>
+    <string name="amount">Amount</string>
+    <string name="redirect_url">Redirect Url</string>
+    <string name="cancel_url">Cancel Url</string>
+    <string name="card_number">Card Number</string>
+    <string name="card_cvv">Card CVV</string>
+    <string name="expiry_month">Expiry Month</string>
+    <string name="expiry_year">Expiry Year</string>
+    <string name="card_details">Card Details</string>
+    <string name="issuing_bank">Issuing Bank</string>
+    <string name="rsa_url">RSA Key Url</string>
+    <string name="customer_identifier">Customer Identifier</string>
+    <string name="emi_banks">EMI Banks</string>
+    <string name="emi_card_name">Card Name</string>
 </resources>

@@ -22,57 +22,85 @@
         android:theme="@style/Theme.GMRBus"
         tools:targetApi="31">
         <activity
-            android:name=".ParentDashboard"
+            android:name=".gateway.activity.InitialScreenActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".ParentRegistration"
-            android:exported="false" />
-        <activity
-            android:name=".ParentLogin"
-            android:exported="false" />
-        <activity
-            android:name=".BusPassActivity"
-            android:exported="false" />
-        <activity
-            android:name=".BookingActivity"
+            android:name=".gateway.activity.StatusActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".AdminRegisterActivity"
+            android:name=".gateway.activity.WebViewActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".gateway.activity.BillingShippingActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".dashboards.parent.ParentDashboard"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".logins.ParentRegistration"
             android:exported="false" />
         <activity
-            android:name=".StudentRegisterActivity"
+            android:name=".logins.ParentLogin"
             android:exported="false" />
         <activity
-            android:name=".Result"
+            android:name=".dashboards.student.BusPassActivity"
             android:exported="false" />
         <activity
-            android:name=".BusInfoActivity"
+            android:name=".dashboards.student.BookingActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".logins.AdminRegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".ScannerActivity"
+            android:name=".logins.StudentRegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".AdminDashboard"
+            android:name=".dashboards.student.Result"
             android:exported="false" />
         <activity
-            android:name=".StudentDashboard"
+            android:name=".dashboards.student.BusInfoActivity"
             android:exported="false" />
         <activity
-            android:name=".StudentLogin"
+            android:name=".dashboards.student.ScannerActivity"
             android:exported="false" />
         <activity
-            android:name=".AdminLogin"
+            android:name=".dashboards.admin.AdminDashboard"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".dashboards.student.StudentDashboard"
+            android:exported="false" />
+        <activity
+            android:name=".logins.StudentLogin"
+            android:exported="false" />
+        <activity
+            android:name=".logins.AdminLogin"
+            android:exported="false" />
+        <activity
+            android:name=".logins.LoginActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

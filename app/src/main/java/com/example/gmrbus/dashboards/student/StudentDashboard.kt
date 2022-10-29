@@ -1,7 +1,6 @@
-package com.example.gmrbus
+package com.example.gmrbus.dashboards.student
 
 import android.content.Intent
-import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -9,6 +8,8 @@ import android.view.MenuItem
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import com.example.gmrbus.R
+import com.example.gmrbus.gateway.activity.InitialScreenActivity
 
 class StudentDashboard : AppCompatActivity() {
     lateinit var textWelcome:TextView
@@ -32,7 +33,7 @@ class StudentDashboard : AppCompatActivity() {
 
 
         btnScan.setOnClickListener {
-            startActivity(Intent(this,ScannerActivity::class.java))
+            startActivity(Intent(this, ScannerActivity::class.java))
         }
 
         btnTrack.setOnClickListener {
@@ -40,11 +41,11 @@ class StudentDashboard : AppCompatActivity() {
         }
 
         btnBooking.setOnClickListener {
-            startActivity(Intent(this,BookingActivity::class.java))
+            startActivity(Intent(this,InitialScreenActivity::class.java))
         }
 
         btnData.setOnClickListener {
-            startActivity(Intent(this,BusInfoActivity::class.java))
+            startActivity(Intent(this, BusInfoActivity::class.java))
         }
 
 

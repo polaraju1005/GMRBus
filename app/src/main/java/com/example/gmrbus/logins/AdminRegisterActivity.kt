@@ -1,4 +1,4 @@
-package com.example.gmrbus
+package com.example.gmrbus.logins
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,12 +6,11 @@ import android.os.Bundle
 import android.os.Build
 import android.widget.*
 import androidx.annotation.RequiresApi
+import com.example.gmrbus.R
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import org.w3c.dom.Text
-import java.time.temporal.TemporalAdjusters.next
 
 class AdminRegisterActivity : AppCompatActivity() {
 

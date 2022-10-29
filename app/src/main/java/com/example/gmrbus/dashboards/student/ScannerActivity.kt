@@ -1,10 +1,9 @@
-package com.example.gmrbus
+package com.example.gmrbus.dashboards.student
 
 import android.content.Intent
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log.i
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -14,7 +13,7 @@ import com.budiyev.android.codescanner.CodeScannerView
 import com.budiyev.android.codescanner.DecodeCallback
 import com.budiyev.android.codescanner.ErrorCallback
 import com.budiyev.android.codescanner.ScanMode
-import java.util.jar.Manifest
+import com.example.gmrbus.R
 
 class ScannerActivity : AppCompatActivity() {
     private lateinit var codeScanner :CodeScanner
@@ -39,7 +38,7 @@ class ScannerActivity : AppCompatActivity() {
         codeScanner.isAutoFocusEnabled = true
         codeScanner.isFlashEnabled = false
         codeScanner.decodeCallback = DecodeCallback {
-            val i = Intent(this,Result::class.java)
+            val i = Intent(this, Result::class.java)
             i.putExtra("path",it.toString())
             startActivity(i)
             runOnUiThread{

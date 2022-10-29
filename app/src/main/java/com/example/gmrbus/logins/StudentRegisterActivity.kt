@@ -1,4 +1,4 @@
-package com.example.gmrbus
+package com.example.gmrbus.logins
 
 import android.content.Intent
 import android.os.Build
@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import com.example.gmrbus.R
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
@@ -140,7 +141,7 @@ class StudentRegisterActivity : AppCompatActivity() {
                                 "User registration successful!",
                                 Toast.LENGTH_SHORT
                             ).show()
-                            startActivity(Intent(this,StudentLogin::class.java))
+                            startActivity(Intent(this, StudentLogin::class.java))
                         }
                     }
                 } else {

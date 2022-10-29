@@ -1,9 +1,11 @@
-package com.example.gmrbus
+package com.example.gmrbus.logins
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.*
+import com.example.gmrbus.R
+import com.example.gmrbus.dashboards.admin.AdminDashboard
 import com.google.firebase.auth.FirebaseAuth
 
 class AdminLogin : AppCompatActivity() {

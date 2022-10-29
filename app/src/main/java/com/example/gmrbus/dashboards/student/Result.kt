@@ -1,11 +1,13 @@
-package com.example.gmrbus
+package com.example.gmrbus.dashboards.student
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.gmrbus.R
 
-class ParentLogin : AppCompatActivity() {
+class Result : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_parent_login)
+        setContentView(R.layout.activity_result)
+
     }
 }
