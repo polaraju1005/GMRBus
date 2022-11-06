@@ -1,9 +1,11 @@
 package com.example.gmrbus.logins
 
+import android.app.Dialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Build
+import android.view.Window
 import android.widget.*
 import androidx.annotation.RequiresApi
 import com.example.gmrbus.R
@@ -33,6 +35,7 @@ class AdminRegisterActivity : AppCompatActivity() {
     lateinit var auth: FirebaseAuth
     private var firebaseUserId: String = ""
     lateinit var refUsers: DatabaseReference
+    private lateinit var dialog:Dialog
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -94,6 +97,7 @@ class AdminRegisterActivity : AppCompatActivity() {
     }
 
     private operator fun next() {
+        showProgressBar()
         auth.createUserWithEmailAndPassword(mail, password)
             .addOnCompleteListener(this@AdminRegisterActivity) { task ->
                 if (task.isSuccessful) {
@@ -117,6 +121,7 @@ class AdminRegisterActivity : AppCompatActivity() {
                         }
                     }
                 } else {
+                    hideProgressBar()
                     Toast.makeText(this, "Something went wrong", Toast.LENGTH_SHORT).show()
                 }
             }
@@ -125,5 +130,18 @@ class AdminRegisterActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
         return true
+    }
+
+    private fun showProgressBar(){
+        dialog = Dialog(this@AdminRegisterActivity)
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog.setContentView(R.layout.dialog_wait)
+        dialog.setCanceledOnTouchOutside(false)
+        dialog.show()
+
+    }
+
+    private fun hideProgressBar(){
+        dialog.dismiss()
     }
 }

@@ -3,14 +3,16 @@ package com.example.gmrbus.logins
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Window
+import android.view.WindowManager
 import android.widget.*
 import com.example.gmrbus.R
 import com.example.gmrbus.dashboards.admin.AdminDashboard
 import com.google.firebase.auth.FirebaseAuth
 
 class AdminLogin : AppCompatActivity() {
-    lateinit var admHeader: TextView
-    private lateinit var icon: ImageView
+//    lateinit var admHeader: TextView
+//    private lateinit var icon: ImageView
     lateinit var email: EditText
     lateinit var password: EditText
     lateinit var forgot: TextView
@@ -23,17 +25,22 @@ class AdminLogin : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_admin_login)
 
+//        requestWindowFeature(Window.FEATURE_NO_TITLE)
+//        this.window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN)
+
+
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.hide()
 
         title = "Admin login"
 
-        admHeader = findViewById(R.id.txtAdmHeader)
-        icon = findViewById(R.id.imgProfile)
-        email = findViewById(R.id.etLoginEmail)
-        password = findViewById(R.id.etLoginPassword)
-        forgot = findViewById(R.id.txtFgPassword)
-        loginBtn = findViewById(R.id.btnLogin)
-        signUp = findViewById(R.id.txtRegister)
+//        admHeader = findViewById(R.id.txtAdmHeader)
+//        icon = findViewById(R.id.imgProfile)
+        email = findViewById(R.id.inputEmail)
+        password = findViewById(R.id.inputPassword)
+        forgot = findViewById(R.id.forgotPassword)
+        loginBtn = findViewById(R.id.btnLoginNew)
+        signUp = findViewById(R.id.gotoRegister)
         auth = FirebaseAuth.getInstance()
 
         loginBtn.setOnClickListener {

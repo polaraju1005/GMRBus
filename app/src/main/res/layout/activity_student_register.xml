@@ -9,40 +9,54 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/imgGMR"
-            android:layout_width="100dp"
-            android:layout_height="70dp"
-            android:layout_marginStart="70dp"
-            android:layout_marginTop="30dp"
-            android:src="@drawable/gmrlogo" />
+        <!--        <TextView-->
+        <!--            android:id="@+id/imgGMR"-->
+        <!--            android:layout_width="140dp"-->
+        <!--            android:layout_height="70dp"-->
+        <!--            android:layout_marginStart="70dp"-->
+        <!--            android:layout_marginTop="30dp"-->
+        <!--            android:text="GMRIT"-->
+        <!--            android:textSize="45sp"/>-->
 
-        <TextView
-            android:id="@+id/txtBuses"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="180dp"
-            android:layout_marginTop="35dp"
-            android:fontFamily="@font/poppins_medium"
-            android:text="BUSES"
-            android:textColor="#27408B"
-            android:textSize="45sp"
-            android:textStyle="bold" />
+        <!--        <TextView-->
+        <!--            android:id="@+id/txtBuses"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginStart="180dp"-->
+        <!--            android:layout_marginTop="35dp"-->
+        <!--            android:fontFamily="@font/poppins_medium"-->
+        <!--            android:text="BUSES"-->
+        <!--            android:textColor="#27408B"-->
+        <!--            android:textSize="45sp"-->
+        <!--            android:textStyle="bold" />-->
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imgStudent"
             android:layout_width="200dp"
             android:layout_height="160dp"
+            android:layout_below="@+id/txtHey"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="150dp"
-            android:src="@drawable/signup" />
+            android:layout_marginTop="5dp"
+            android:contentDescription="TODO"
+            android:src="@drawable/profile" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="130dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Upload Image"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
 
         <TextView
             android:id="@+id/txtHey"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="10dp"
             android:fontFamily="@font/poppins_medium"
             android:text="HEY... SIGN UP !"
             android:textColor="@color/black"
@@ -53,8 +67,9 @@
             android:id="@+id/etEmail"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/etUsername"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="390dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/input_bg"
             android:ems="10"
             android:fontFamily="@font/poppins_medium"
@@ -67,8 +82,9 @@
             android:id="@+id/etUsername"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/imgStudent"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="330dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/input_bg"
             android:ems="10"
             android:fontFamily="@font/poppins_medium"
@@ -81,13 +97,15 @@
             android:id="@+id/etPassword"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/dropdownBusNumber"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="765dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/input_bg"
             android:ems="10"
             android:fontFamily="@font/poppins_medium"
             android:hint="Password"
             android:inputType="textPassword"
+            android:minHeight="48dp"
             android:padding="10dp"
             android:textSize="16sp"
             android:textStyle="bold" />
@@ -96,13 +114,15 @@
             android:id="@+id/etCnfPassword"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/etPassword"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="818dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/input_bg"
             android:ems="10"
             android:fontFamily="@font/poppins_medium"
             android:hint="Confirm Password"
             android:inputType="textPassword"
+            android:minHeight="48dp"
             android:padding="10dp"
             android:textSize="16sp"
             android:textStyle="bold" />
@@ -112,8 +132,9 @@
             android:id="@+id/etPersonalPhn"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/etParentPhn"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="510dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/input_bg"
             android:ems="10"
             android:fontFamily="@font/poppins_medium"
@@ -126,8 +147,9 @@
             android:id="@+id/etParentPhn"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/etEmail"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="450dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/input_bg"
             android:ems="10"
             android:fontFamily="@font/poppins_medium"
@@ -177,7 +199,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/dropdownAdmin"
+            android:id="@+id/dropdownBusNumber"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
@@ -192,7 +214,7 @@
                 android:ems="10"
                 android:fontFamily="@font/poppins_medium"
                 android:inputType="none"
-                android:text="Coordinator" />
+                android:text="Bus Number" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -200,8 +222,9 @@
             android:id="@+id/btnRegister"
             android:layout_width="160dp"
             android:layout_height="55dp"
+            android:layout_below="@+id/etCnfPassword"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="868dp"
+            android:layout_marginTop="10dp"
             android:layout_marginBottom="30dp"
             android:background="@drawable/gradient_button"
             android:fontFamily="@font/poppins_medium"

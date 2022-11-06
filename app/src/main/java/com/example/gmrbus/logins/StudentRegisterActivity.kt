@@ -1,8 +1,11 @@
 package com.example.gmrbus.logins
 
+import android.app.Dialog
 import android.content.Intent
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
+import android.view.Window
 import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
@@ -11,6 +14,8 @@ import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
 
 class StudentRegisterActivity : AppCompatActivity() {
     lateinit var logo: ImageView
@@ -37,6 +42,9 @@ class StudentRegisterActivity : AppCompatActivity() {
     private var firebaseUserId: String = ""
     private var adminUserId: String = ""
     lateinit var auth: FirebaseAuth
+    private lateinit var dialog:Dialog
+    lateinit var imageUri:Uri
+    lateinit var storage:StorageReference
 
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -48,16 +56,16 @@ class StudentRegisterActivity : AppCompatActivity() {
 
         title = "Register"
 
-        logo = findViewById(R.id.imgGMR)
-        txtBuses = findViewById(R.id.txtBuses)
-        textHey = findViewById(R.id.txtHey)
+//        logo = findViewById(R.id.imgGMR)
+//        txtBuses = findViewById(R.id.txtBuses)
+//        textHey = findViewById(R.id.txtHey)
         imgStudent = findViewById(R.id.imgStudent)
         edtUserName = findViewById(R.id.etUsername)
         edtEmail = findViewById(R.id.etEmail)
         etParentPhone = findViewById(R.id.etParentPhn)
         etPersonalPhone = findViewById(R.id.etPersonalPhn)
         yos = findViewById(R.id.dropdown)
-        coordinator = findViewById(R.id.dropdownAdmin)
+        coordinator = findViewById(R.id.dropdownBusNumber)
         department = findViewById(R.id.dropdownDepartment)
         etpassword = findViewById(R.id.etPassword)
         etConfirmPassword = findViewById(R.id.etCnfPassword)
@@ -79,6 +87,10 @@ class StudentRegisterActivity : AppCompatActivity() {
         autocompleteTV.setAdapter(arrayAdapter)
         autoCompleteTV2.setAdapter(arrayAdapterTwo)
         autoCompleteTV3.setAdapter(arrayAdapterThree)
+
+//        imgStudent.setOnClickListener {
+//            selectImage()
+//        }
 
         register.setOnClickListener {
             name = edtUserName.text.toString().trim { it <= ' ' }
@@ -116,7 +128,23 @@ class StudentRegisterActivity : AppCompatActivity() {
 
     }
 
+//    private fun selectImage() {
+//        Intent(intent.setType("image/*").setAction(Intent.ACTION_GET_CONTENT))
+//        startActivityIfNeeded(intent,100)
+//    }
+//
+//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+//        super.onActivityResult(requestCode, resultCode, data)
+//
+//        if (requestCode == 100 && data!=null && data.data!=null) {
+//            imageUri = data?.data!!
+//            imgStudent.setImageURI(imageUri)
+//
+//        }
+//    }
     private operator fun next() {
+//        uploadImage()
+        showProgressBar()
         auth.createUserWithEmailAndPassword(mail, password)
             .addOnCompleteListener(this@StudentRegisterActivity) { task ->
                 if (task.isSuccessful) {
@@ -145,13 +173,35 @@ class StudentRegisterActivity : AppCompatActivity() {
                         }
                     }
                 } else {
+                    hideProgressBar()
                     Toast.makeText(this, "Something went wrong", Toast.LENGTH_SHORT).show()
                 }
             }
     }
 
+//    private fun uploadImage() {
+//        storage = FirebaseStorage.getInstance().reference.child("pics")
+//        storage.putFile(imageUri).addOnSuccessListener {
+//            storage.downloadUrl.addOnSuccessListener { i->
+//                refusers!!.child("profile").setValue(i.toString())
+//            }
+//        }
+//
+//    }
+
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
         return true
+    }
+
+    private fun showProgressBar(){
+        dialog= Dialog(this@StudentRegisterActivity)
+        dialog.setContentView(R.layout.dialog_wait)
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog.setCanceledOnTouchOutside(false)
+        dialog.show()
+    }
+    private fun hideProgressBar(){
+        dialog.hide()
     }
 }
