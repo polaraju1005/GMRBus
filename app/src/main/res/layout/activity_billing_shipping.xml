@@ -20,6 +20,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
                 android:text="Order Id : "
                 android:textSize="14sp"
                 android:textStyle="bold" />
@@ -38,6 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_medium"
             android:paddingLeft="10dp"
             android:text="@string/billingAddress"
             android:textStyle="bold" />
@@ -46,6 +48,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_medium"
             android:paddingLeft="10dp"
             android:text="@string/name" />
 
@@ -53,13 +56,19 @@
             android:id="@+id/billingName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/input_bg"
             android:ems="10"
+            android:fontFamily="@font/poppins_medium"
+            android:padding="10dp"
             android:text="Charli" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_medium"
             android:paddingLeft="10dp"
             android:text="@string/address" />
 
@@ -67,14 +76,20 @@
             android:id="@+id/billingAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/input_bg"
             android:ems="10"
+            android:fontFamily="@font/poppins_medium"
             android:inputType="textPostalAddress"
+            android:padding="10dp"
             android:text="Room no 1101 near Railway station Ambad" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_medium"
             android:paddingLeft="10dp"
             android:text="@string/country" />
 
@@ -82,13 +97,19 @@
             android:id="@+id/billingCountry"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/input_bg"
             android:ems="10"
+            android:fontFamily="@font/poppins_medium"
+            android:padding="10dp"
             android:text="India" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_medium"
             android:paddingLeft="10dp"
             android:text="@string/state" />
 
@@ -96,13 +117,19 @@
             android:id="@+id/billingState"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/input_bg"
             android:ems="10"
+            android:fontFamily="@font/poppins_medium"
+            android:padding="10dp"
             android:text="MH" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_medium"
             android:paddingLeft="10dp"
             android:text="@string/city" />
 
@@ -110,13 +137,19 @@
             android:id="@+id/billingCity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/input_bg"
             android:ems="10"
+            android:fontFamily="@font/poppins_medium"
+            android:padding="10dp"
             android:text="Indore" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_medium"
             android:paddingLeft="10dp"
             android:text="@string/zip" />
 
@@ -124,13 +157,19 @@
             android:id="@+id/billingZip"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/input_bg"
             android:ems="10"
+            android:fontFamily="@font/poppins_medium"
+            android:padding="10dp"
             android:text="425001" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_medium"
             android:paddingLeft="10dp"
             android:text="@string/tel" />
 
@@ -138,14 +177,20 @@
             android:id="@+id/billingTel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/input_bg"
             android:ems="10"
+            android:fontFamily="@font/poppins_medium"
             android:inputType="phone"
+            android:padding="10dp"
             android:text="9595226054" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_medium"
             android:paddingLeft="10dp"
             android:text="@string/email" />
 
@@ -153,8 +198,13 @@
             android:id="@+id/billingEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/input_bg"
             android:ems="10"
+            android:fontFamily="@font/poppins_medium"
             android:inputType="textEmailAddress"
+            android:padding="10dp"
             android:text="pratik.pai@avenues.info" />
 
         <!-- Billing Address End -->
@@ -166,6 +216,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_medium"
             android:paddingLeft="10dp"
             android:text="@string/deliveryAddress"
             android:textStyle="bold" />
@@ -174,6 +225,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_medium"
             android:paddingLeft="10dp"
             android:text="@string/name" />
 
@@ -181,13 +233,19 @@
             android:id="@+id/deliveryName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/input_bg"
             android:ems="10"
+            android:fontFamily="@font/poppins_medium"
+            android:padding="10dp"
             android:text="Chaplin" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_medium"
             android:paddingLeft="10dp"
             android:text="@string/address" />
 
@@ -195,14 +253,20 @@
             android:id="@+id/deliveryAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/input_bg"
             android:ems="10"
+            android:fontFamily="@font/poppins_medium"
             android:inputType="textPostalAddress"
+            android:padding="10dp"
             android:text="room no.701 near bus stand" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_medium"
             android:paddingLeft="10dp"
             android:text="@string/country" />
 
@@ -210,13 +274,19 @@
             android:id="@+id/deliveryCountry"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/input_bg"
             android:ems="10"
+            android:fontFamily="@font/poppins_medium"
+            android:padding="10dp"
             android:text="India" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_medium"
             android:paddingLeft="10dp"
             android:text="@string/state" />
 
@@ -224,13 +294,19 @@
             android:id="@+id/deliveryState"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/input_bg"
             android:ems="10"
+            android:fontFamily="@font/poppins_medium"
+            android:padding="10dp"
             android:text="Andhra" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_medium"
             android:paddingLeft="10dp"
             android:text="@string/city" />
 
@@ -238,13 +314,19 @@
             android:id="@+id/deliveryCity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/input_bg"
             android:ems="10"
+            android:fontFamily="@font/poppins_medium"
+            android:padding="10dp"
             android:text="Hyderabad" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_medium"
             android:paddingLeft="10dp"
             android:text="@string/zip" />
 
@@ -252,13 +334,19 @@
             android:id="@+id/deliveryZip"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/input_bg"
             android:ems="10"
+            android:fontFamily="@font/poppins_medium"
+            android:padding="10dp"
             android:text="425001" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_medium"
             android:paddingLeft="10dp"
             android:text="@string/tel" />
 
@@ -266,8 +354,13 @@
             android:id="@+id/deliveryTel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/input_bg"
             android:ems="10"
+            android:fontFamily="@font/poppins_medium"
             android:inputType="phone"
+            android:padding="10dp"
             android:text="9595226054" />
 
         <!-- Delivery Address End -->
@@ -276,6 +369,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_medium"
             android:paddingLeft="10dp"
             android:text="@string/redirect_url" />
 
@@ -283,14 +377,20 @@
             android:id="@+id/redirectUrl"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/input_bg"
             android:ems="10"
+            android:fontFamily="@font/poppins_medium"
             android:inputType="textUri"
+            android:padding="10dp"
             android:text="http://122.182.6.216/merchant/ccavResponseHandler.jsp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_medium"
             android:paddingLeft="10dp"
             android:text="@string/cancel_url" />
 
@@ -298,14 +398,20 @@
             android:id="@+id/cancelUrl"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/input_bg"
             android:ems="10"
+            android:fontFamily="@font/poppins_medium"
             android:inputType="textUri"
+            android:padding="10dp"
             android:text="http://122.182.6.216/merchant/ccavResponseHandler.jsp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_medium"
             android:paddingLeft="10dp"
             android:text="@string/rsa_url" />
 
@@ -313,8 +419,13 @@
             android:id="@+id/rsaUrl"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/input_bg"
             android:ems="10"
+            android:fontFamily="@font/poppins_medium"
             android:inputType="textUri"
+            android:padding="10dp"
             android:text="https://secure.ccavenue.com/transaction/jsp/GetRSA.jsp" />
 
         <LinearLayout
@@ -335,6 +446,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppins_medium"
                 android:paddingLeft="10dp"
                 android:text="@string/pay_opt" />
 
@@ -349,6 +461,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppins_medium"
                 android:paddingLeft="10dp"
                 android:text="@string/card_type" />
 
@@ -371,6 +484,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppins_medium"
                 android:paddingLeft="10dp"
                 android:text="@string/emi_banks" />
 
@@ -384,6 +498,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppins_medium"
                 android:paddingLeft="10dp"
                 android:text="@string/emi_card_name" />
 
@@ -417,6 +532,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppins_medium"
                 android:paddingLeft="10dp"
                 android:text="@string/card_details"
                 android:textStyle="bold" />
@@ -425,6 +541,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppins_medium"
                 android:paddingLeft="10dp"
                 android:text="@string/card_number" />
 
