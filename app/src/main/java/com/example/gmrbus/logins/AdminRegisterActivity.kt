@@ -25,6 +25,7 @@ class AdminRegisterActivity : AppCompatActivity() {
     lateinit var etAdminPhone: EditText
     private lateinit var busroute: TextInputLayout
     private lateinit var routeNumber: TextInputLayout
+    private lateinit var busNumber:TextInputLayout
     private lateinit var etAdPassword: EditText
     lateinit var etAdConfirmPassword: EditText
     lateinit var adRegister: Button
@@ -49,14 +50,11 @@ class AdminRegisterActivity : AppCompatActivity() {
 
         title = "Register"
 
-//        adLogo = findViewById(R.id.adImgGMR)
-//        adTxtBuses = findViewById(R.id.adTxtBuses)
-//        adTextHey = findViewById(R.id.adTxtHey)
-//        imgAdmin = findViewById(R.id.imgAdmin)
         edtAdminName = findViewById(R.id.etAdminName)
         edtAdminEmail = findViewById(R.id.etAdminEmail)
         busroute = findViewById(R.id.dropdownBusRoute)
         routeNumber = findViewById(R.id.dropdownRouteNumber)
+        busNumber = findViewById(R.id.dropdownBusNumber)
         etAdminPhone = findViewById(R.id.etAdminPhn)
         etAdPassword = findViewById(R.id.etAdPassword)
         etAdConfirmPassword = findViewById(R.id.etAdCnfPassword)
@@ -65,15 +63,19 @@ class AdminRegisterActivity : AppCompatActivity() {
 
         val busRoutes = resources.getStringArray(R.array.busroute)
         val routeNumbers = resources.getStringArray(R.array.RouteNumber)
+        val busNumbers = resources.getStringArray(R.array.BusNumbers)
 
         val arrayAdapter3 = ArrayAdapter(this, R.layout.dropdown_busroute, busRoutes)
         val arrayAdapter4 = ArrayAdapter(this, R.layout.dropdown_busroute, routeNumbers)
+        val arrayAdapter5 = ArrayAdapter(this,R.layout.dropdown_busroute,busNumbers)
 
         val autocompleteTV3 = findViewById<AutoCompleteTextView>(R.id.autoCompleteTextView2)
         val autoCompleteTV4 = findViewById<AutoCompleteTextView>(R.id.autoCompleteTextView4)
+        val autoCompleteTV5 = findViewById<AutoCompleteTextView>(R.id.autoCompleteTextView5)
 
         autocompleteTV3.setAdapter(arrayAdapter3)
         autoCompleteTV4.setAdapter(arrayAdapter4)
+        autoCompleteTV5.setAdapter(arrayAdapter5)
 
         adRegister.setOnClickListener {
             name = edtAdminName.text.toString().trim { it <= ' ' }
@@ -120,6 +122,7 @@ class AdminRegisterActivity : AppCompatActivity() {
                     userHashMap["phone"] = etAdminPhone.text.toString().trim { it <= ' ' }
                     userHashMap["busRoute"] = busroute.editText!!.text.toString()
                     userHashMap["routeNumber"] = routeNumber.editText!!.text.toString()
+                    userHashMap["busNumber"] = busNumber.editText!!.text.toString()
                     userHashMap["adminNumber"] = adminNumber.toString()
                     refUsers.updateChildren(userHashMap).addOnCompleteListener { task ->
                         if (task.isSuccessful) {

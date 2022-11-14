@@ -9,5 +9,7 @@ class ParentLogin : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_parent_login)
         supportActionBar?.hide()
+
+        
     }
 }

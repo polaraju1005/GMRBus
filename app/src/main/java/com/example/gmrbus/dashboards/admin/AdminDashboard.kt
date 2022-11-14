@@ -6,8 +6,11 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.drawerlayout.widget.DrawerLayout
 import com.example.gmrbus.R
 import com.example.gmrbus.models.Users
+import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 
@@ -17,11 +20,33 @@ class AdminDashboard : AppCompatActivity() {
     private lateinit var databaseReference:DatabaseReference
     private lateinit var uid:String
     lateinit var coordinatorName:TextView
+    lateinit var toggle:ActionBarDrawerToggle
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_admin_dashboard)
 
         title = "Dashboard"
+
+        val drawerLayout : DrawerLayout = findViewById(R.id.drawerLayout)
+        val navView : NavigationView = findViewById(R.id.nav_view)
+
+        toggle = ActionBarDrawerToggle(this,drawerLayout,R.string.open,R.string.close)
+        drawerLayout.addDrawerListener(toggle)
+        toggle.syncState()
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        navView.setNavigationItemSelectedListener {
+            when(it.itemId){
+                R.id.nav_home -> Toast.makeText(applicationContext,"Clicked Home",Toast.LENGTH_SHORT).show()
+                R.id.busRoutes -> Toast.makeText(applicationContext,"Clicked Bus Routes",Toast.LENGTH_SHORT).show()
+                R.id.nav_settings -> Toast.makeText(applicationContext,"Clicked settings",Toast.LENGTH_SHORT).show()
+                R.id.nav_logout -> Toast.makeText(applicationContext,"Clicked logout",Toast.LENGTH_SHORT).show()
+                R.id.nav_share -> Toast.makeText(applicationContext,"Clicked share",Toast.LENGTH_SHORT).show()
+                R.id.nav_rate_us -> Toast.makeText(applicationContext,"Clicked rate us",Toast.LENGTH_SHORT).show()
+            }
+            true
+        }
 
         coordinatorName = findViewById(R.id.txtAdminName)
 
@@ -34,15 +59,9 @@ class AdminDashboard : AppCompatActivity() {
         }
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.dashboard,menu)
-        return super.onCreateOptionsMenu(menu)
-    }
-
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId){
-            R.id.settings -> Toast.makeText(this,"Coming soon",Toast.LENGTH_SHORT).show()
-            R.id.logOut -> onSupportNavigateUp()
+        if(toggle.onOptionsItemSelected(item)){
+            return true
         }
         return super.onOptionsItemSelected(item)
     }
