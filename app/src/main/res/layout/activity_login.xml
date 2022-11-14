@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -15,7 +14,7 @@
         android:background="@drawable/gradient_button"
         android:drawableRight="@drawable/adm"
         android:fontFamily="@font/poppins_medium"
-        android:text="Admin login"
+        android:text="I'm an Admin"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold" />
@@ -30,7 +29,7 @@
         android:background="@drawable/gradient_button"
         android:drawableRight="@drawable/stu"
         android:fontFamily="@font/poppins_medium"
-        android:text="Student login"
+        android:text="I'm a Student"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold" />
@@ -45,10 +44,9 @@
         android:background="@drawable/gradient_button"
         android:drawableRight="@drawable/parent"
         android:fontFamily="@font/poppins_medium"
-        android:text="Parent login"
+        android:text="I'm a Parent"
         android:textColor="@color/white"
         android:textSize="20sp"
-        android:textStyle="bold"
-        />
+        android:textStyle="bold" />
 
 </RelativeLayout>

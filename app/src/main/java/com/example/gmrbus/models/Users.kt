@@ -7,6 +7,7 @@ class Users {
     private var phone: String = ""
     private var password: String = ""
     private var busRoute: String = ""
+    private var routeNumber:String = ""
 
     constructor()
     constructor(
@@ -16,6 +17,7 @@ class Users {
         phone: String,
         password: String,
         busRoute: String,
+        routeNumber: String
     ) {
         this.uid = uid
         this.username = username
@@ -23,6 +25,7 @@ class Users {
         this.phone = phone
         this.password = password
         this.busRoute = busRoute
+        this.routeNumber = routeNumber
     }
 
     fun getUID(): String? {
@@ -63,6 +66,14 @@ class Users {
 
     fun setBusRoute(busRoute: String) {
         this.busRoute = busRoute
+    }
+
+    fun getRouteNumber():String?{
+        return routeNumber
+    }
+
+    fun setRouteNumber(routeNumber: String){
+        this.routeNumber = routeNumber
     }
 
 }

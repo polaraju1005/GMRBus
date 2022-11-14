@@ -2,6 +2,8 @@ package com.example.gmrbus.dashboards.admin
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.TextView
 import android.widget.Toast
 import com.example.gmrbus.R
@@ -30,6 +32,19 @@ class AdminDashboard : AppCompatActivity() {
         if (uid.isNotEmpty()){
             getUserData()
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.dashboard,menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.settings -> Toast.makeText(this,"Coming soon",Toast.LENGTH_SHORT).show()
+            R.id.logOut -> onSupportNavigateUp()
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     private fun getUserData() {

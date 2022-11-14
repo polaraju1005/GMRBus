@@ -2,12 +2,12 @@ package com.example.gmrbus.logins
 
 import android.app.Dialog
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import android.os.Build
+import android.os.Bundle
 import android.view.Window
 import android.widget.*
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
 import com.example.gmrbus.R
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
@@ -16,26 +16,29 @@ import com.google.firebase.database.FirebaseDatabase
 
 class AdminRegisterActivity : AppCompatActivity() {
 
-    private lateinit var adLogo: ImageView
-    lateinit var adTxtBuses: TextView
-    lateinit var adTextHey: TextView
-    private lateinit var imgAdmin: ImageView
+//    private lateinit var adLogo: ImageView
+//    lateinit var adTxtBuses: TextView
+//    lateinit var adTextHey: TextView
+//    private lateinit var imgAdmin: ImageView
     private lateinit var edtAdminName: EditText
     private lateinit var edtAdminEmail: EditText
     lateinit var etAdminPhone: EditText
     private lateinit var busroute: TextInputLayout
+    private lateinit var routeNumber: TextInputLayout
     private lateinit var etAdPassword: EditText
     lateinit var etAdConfirmPassword: EditText
     lateinit var adRegister: Button
     private lateinit var name: String
     lateinit var mail: String
-    lateinit var password: String
+    private lateinit var password: String
     lateinit var confirmPassword: String
     lateinit var personalPhone: String
     lateinit var auth: FirebaseAuth
     private var firebaseUserId: String = ""
     lateinit var refUsers: DatabaseReference
-    private lateinit var dialog:Dialog
+    private lateinit var dialog: Dialog
+    private var adminNumber:Int = 0
+
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,13 +49,14 @@ class AdminRegisterActivity : AppCompatActivity() {
 
         title = "Register"
 
-        adLogo = findViewById(R.id.adImgGMR)
-        adTxtBuses = findViewById(R.id.adTxtBuses)
-        adTextHey = findViewById(R.id.adTxtHey)
-        imgAdmin = findViewById(R.id.imgAdmin)
+//        adLogo = findViewById(R.id.adImgGMR)
+//        adTxtBuses = findViewById(R.id.adTxtBuses)
+//        adTextHey = findViewById(R.id.adTxtHey)
+//        imgAdmin = findViewById(R.id.imgAdmin)
         edtAdminName = findViewById(R.id.etAdminName)
         edtAdminEmail = findViewById(R.id.etAdminEmail)
         busroute = findViewById(R.id.dropdownBusRoute)
+        routeNumber = findViewById(R.id.dropdownRouteNumber)
         etAdminPhone = findViewById(R.id.etAdminPhn)
         etAdPassword = findViewById(R.id.etAdPassword)
         etAdConfirmPassword = findViewById(R.id.etAdCnfPassword)
@@ -60,12 +64,16 @@ class AdminRegisterActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
 
         val busRoutes = resources.getStringArray(R.array.busroute)
+        val routeNumbers = resources.getStringArray(R.array.RouteNumber)
 
         val arrayAdapter3 = ArrayAdapter(this, R.layout.dropdown_busroute, busRoutes)
+        val arrayAdapter4 = ArrayAdapter(this, R.layout.dropdown_busroute, routeNumbers)
 
         val autocompleteTV3 = findViewById<AutoCompleteTextView>(R.id.autoCompleteTextView2)
+        val autoCompleteTV4 = findViewById<AutoCompleteTextView>(R.id.autoCompleteTextView4)
 
         autocompleteTV3.setAdapter(arrayAdapter3)
+        autoCompleteTV4.setAdapter(arrayAdapter4)
 
         adRegister.setOnClickListener {
             name = edtAdminName.text.toString().trim { it <= ' ' }
@@ -91,6 +99,7 @@ class AdminRegisterActivity : AppCompatActivity() {
                     Toast.LENGTH_SHORT
                 ).show()
             } else {
+                adminNumber++
                 next()
             }
         }
@@ -110,6 +119,8 @@ class AdminRegisterActivity : AppCompatActivity() {
                     userHashMap["email"] = edtAdminEmail.text.toString().trim { it <= ' ' }
                     userHashMap["phone"] = etAdminPhone.text.toString().trim { it <= ' ' }
                     userHashMap["busRoute"] = busroute.editText!!.text.toString()
+                    userHashMap["routeNumber"] = routeNumber.editText!!.text.toString()
+                    userHashMap["adminNumber"] = adminNumber.toString()
                     refUsers.updateChildren(userHashMap).addOnCompleteListener { task ->
                         if (task.isSuccessful) {
                             Toast.makeText(
@@ -118,6 +129,7 @@ class AdminRegisterActivity : AppCompatActivity() {
                                 Toast.LENGTH_SHORT
                             ).show()
                             startActivity(Intent(this, AdminLogin::class.java))
+                            finish()
                         }
                     }
                 } else {
@@ -132,7 +144,9 @@ class AdminRegisterActivity : AppCompatActivity() {
         return true
     }
 
-    private fun showProgressBar(){
+
+
+    private fun showProgressBar() {
         dialog = Dialog(this@AdminRegisterActivity)
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
         dialog.setContentView(R.layout.dialog_wait)
@@ -141,7 +155,8 @@ class AdminRegisterActivity : AppCompatActivity() {
 
     }
 
-    private fun hideProgressBar(){
+    private fun hideProgressBar() {
         dialog.dismiss()
     }
+
 }

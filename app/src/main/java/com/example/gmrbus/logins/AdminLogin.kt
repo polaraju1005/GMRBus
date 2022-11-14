@@ -72,11 +72,13 @@ class AdminLogin : AppCompatActivity() {
                 if (task.isSuccessful) {
                     Toast.makeText(this, "Logged in successfully !", Toast.LENGTH_SHORT).show()
                     startActivity(Intent(this, AdminDashboard::class.java))
+                    finish()
                 } else {
                     Toast.makeText(this, "Invalid Credentials!", Toast.LENGTH_SHORT).show()
                 }
             }
     }
+
 
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()

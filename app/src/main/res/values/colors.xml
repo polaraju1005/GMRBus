@@ -11,4 +11,5 @@
     <color name="gradient2">#00D7FF</color>
     <color name="gradient3">#72FFFF</color>
     <color name="adminLogin">#0099ff</color>
+    <color name="parentLogin">#00cba9</color>
 </resources>
