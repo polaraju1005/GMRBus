@@ -11,7 +11,7 @@
         android:layout_centerHorizontal="true"
         android:text="Please Wait..."
         android:textColor="@color/black"
-        android:textSize="10sp"
+        android:textSize="11sp"
         android:fontFamily="@font/poppins_medium"/>
 
     <com.jpardogo.android.googleprogressbar.library.GoogleProgressBar
@@ -21,6 +21,6 @@
         android:layout_margin="10dp"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/txtViewWait"
-        gbp:type="folding_circles"/>
+        gbp:type="chrome_floating_circles"/>
 
 </RelativeLayout>

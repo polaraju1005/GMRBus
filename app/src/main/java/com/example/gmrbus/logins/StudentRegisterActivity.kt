@@ -2,7 +2,6 @@ package com.example.gmrbus.logins
 
 import android.app.Dialog
 import android.content.Intent
-import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.view.Window
@@ -14,37 +13,29 @@ import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.storage.FirebaseStorage
-import com.google.firebase.storage.StorageReference
 
 class StudentRegisterActivity : AppCompatActivity() {
-    lateinit var logo: ImageView
-    lateinit var txtBuses: TextView
-    lateinit var textHey: TextView
-    private lateinit var imgStudent: ImageView
+
     private lateinit var edtUserName: EditText
     private lateinit var edtEmail: EditText
     lateinit var etParentPhone: EditText
     private lateinit var etPersonalPhone: EditText
     private lateinit var yos: TextInputLayout
     private lateinit var department: TextInputLayout
-    lateinit var coordinator: TextInputLayout
-    private lateinit var etpassword: EditText
+    lateinit var busNumber: TextInputLayout
+    private lateinit var etPassword: EditText
     lateinit var etConfirmPassword: EditText
     lateinit var register: Button
     private lateinit var name: String
     lateinit var mail: String
-    lateinit var password: String
+    private lateinit var password: String
     lateinit var confirmPassword: String
     lateinit var parentPhone: String
     lateinit var personalPhone: String
-    lateinit var refusers: DatabaseReference
+    lateinit var refUsers: DatabaseReference
     private var firebaseUserId: String = ""
-    private var adminUserId: String = ""
-    lateinit var auth: FirebaseAuth
-    private lateinit var dialog:Dialog
-    lateinit var imageUri:Uri
-    lateinit var storage:StorageReference
+    lateinit var mauth: FirebaseAuth
+    private lateinit var dialog: Dialog
 
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -56,29 +47,25 @@ class StudentRegisterActivity : AppCompatActivity() {
 
         title = "Register"
 
-//        logo = findViewById(R.id.imgGMR)
-//        txtBuses = findViewById(R.id.txtBuses)
-//        textHey = findViewById(R.id.txtHey)
-        imgStudent = findViewById(R.id.imgStudent)
         edtUserName = findViewById(R.id.etUsername)
         edtEmail = findViewById(R.id.etEmail)
         etParentPhone = findViewById(R.id.etParentPhn)
         etPersonalPhone = findViewById(R.id.etPersonalPhn)
         yos = findViewById(R.id.dropdown)
-        coordinator = findViewById(R.id.dropdownBusNumber)
+        busNumber = findViewById(R.id.dropdownBusNumber)
         department = findViewById(R.id.dropdownDepartment)
-        etpassword = findViewById(R.id.etPassword)
+        etPassword = findViewById(R.id.etPassword)
         etConfirmPassword = findViewById(R.id.etCnfPassword)
         register = findViewById(R.id.btnRegister)
-        auth = FirebaseAuth.getInstance()
+        mauth = FirebaseAuth.getInstance()
 
         val years = resources.getStringArray(R.array.year_of_study)
         val departments = resources.getStringArray(R.array.department)
-        val admins = resources.getStringArray(R.array.coordinator)
+        val busNumbers = resources.getStringArray(R.array.BusNumbers)
 
         val arrayAdapter = ArrayAdapter(this, R.layout.dropdown_item, years)
         val arrayAdapterTwo = ArrayAdapter(this, R.layout.department_dropdown, departments)
-        val arrayAdapterThree = ArrayAdapter(this, R.layout.dropdown_admin, admins)
+        val arrayAdapterThree = ArrayAdapter(this, R.layout.dropdown_admin, busNumbers)
 
         val autocompleteTV = findViewById<AutoCompleteTextView>(R.id.autoCompleteTextView)
         val autoCompleteTV2 = findViewById<AutoCompleteTextView>(R.id.autoCompleteTextView2)
@@ -88,16 +75,13 @@ class StudentRegisterActivity : AppCompatActivity() {
         autoCompleteTV2.setAdapter(arrayAdapterTwo)
         autoCompleteTV3.setAdapter(arrayAdapterThree)
 
-//        imgStudent.setOnClickListener {
-//            selectImage()
-//        }
 
         register.setOnClickListener {
             name = edtUserName.text.toString().trim { it <= ' ' }
             mail = edtEmail.text.toString().trim { it <= ' ' }
             parentPhone = etParentPhone.text.toString().trim { it <= ' ' }
             personalPhone = etPersonalPhone.text.toString().trim { it <= ' ' }
-            password = etpassword.text.toString().trim { it <= ' ' }
+            password = etPassword.text.toString().trim { it <= ' ' }
             confirmPassword = etConfirmPassword.text.toString().trim { it <= ' ' }
             if (name.isEmpty()) {
                 Toast.makeText(this, "Please enter name", Toast.LENGTH_SHORT).show()
@@ -122,36 +106,20 @@ class StudentRegisterActivity : AppCompatActivity() {
                     Toast.LENGTH_SHORT
                 ).show()
             } else {
-                next()
+                regNext()
             }
         }
 
     }
 
-//    private fun selectImage() {
-//        Intent(intent.setType("image/*").setAction(Intent.ACTION_GET_CONTENT))
-//        startActivityIfNeeded(intent,100)
-//    }
-//
-//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-//        super.onActivityResult(requestCode, resultCode, data)
-//
-//        if (requestCode == 100 && data!=null && data.data!=null) {
-//            imageUri = data?.data!!
-//            imgStudent.setImageURI(imageUri)
-//
-//        }
-//    }
-    private operator fun next() {
-//        uploadImage()
+    private  fun regNext() {
         showProgressBar()
-        auth.createUserWithEmailAndPassword(mail, password)
+        mauth.createUserWithEmailAndPassword(mail, password)
             .addOnCompleteListener(this@StudentRegisterActivity) { task ->
                 if (task.isSuccessful) {
-                    firebaseUserId = auth.currentUser!!.uid
-                    adminUserId = coordinator.editText!!.text.toString()
-                    refusers =
-                        FirebaseDatabase.getInstance().reference.child("Users").child(adminUserId)
+                    firebaseUserId = mauth.currentUser!!.uid
+                    refUsers =
+                        FirebaseDatabase.getInstance().reference.child("Users")
                             .child(firebaseUserId)
                     val userHashMap = HashMap<String, Any>()
                     userHashMap["uid"] = firebaseUserId
@@ -161,8 +129,8 @@ class StudentRegisterActivity : AppCompatActivity() {
                     userHashMap["phone"] = etPersonalPhone.text.toString().trim { it <= ' ' }
                     userHashMap["yos"] = yos.editText!!.text.toString()
                     userHashMap["department"] = department.editText!!.text.toString()
-                    userHashMap["coordinator"] = coordinator.editText!!.text.toString()
-                    refusers.updateChildren(userHashMap).addOnCompleteListener { task ->
+                    userHashMap["busNumber"] = busNumber.editText!!.text.toString()
+                    refUsers.updateChildren(userHashMap).addOnCompleteListener { task ->
                         if (task.isSuccessful) {
                             Toast.makeText(
                                 this,
@@ -170,6 +138,7 @@ class StudentRegisterActivity : AppCompatActivity() {
                                 Toast.LENGTH_SHORT
                             ).show()
                             startActivity(Intent(this, StudentLogin::class.java))
+                            finish()
                         }
                     }
                 } else {
@@ -179,29 +148,20 @@ class StudentRegisterActivity : AppCompatActivity() {
             }
     }
 
-//    private fun uploadImage() {
-//        storage = FirebaseStorage.getInstance().reference.child("pics")
-//        storage.putFile(imageUri).addOnSuccessListener {
-//            storage.downloadUrl.addOnSuccessListener { i->
-//                refusers!!.child("profile").setValue(i.toString())
-//            }
-//        }
-//
-//    }
-
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
         return true
     }
 
-    private fun showProgressBar(){
-        dialog= Dialog(this@StudentRegisterActivity)
-        dialog.setContentView(R.layout.dialog_wait)
+    private fun showProgressBar() {
+        dialog = Dialog(this@StudentRegisterActivity)
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog.setContentView(R.layout.dialog_wait)
         dialog.setCanceledOnTouchOutside(false)
         dialog.show()
     }
-    private fun hideProgressBar(){
-        dialog.hide()
+
+    private fun hideProgressBar() {
+        dialog.dismiss()
     }
 }

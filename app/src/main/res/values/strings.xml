@@ -34,14 +34,14 @@
     </string-array>
 
     <string-array name="BusNumbers">
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-        <item>7</item>
-        <item>8</item>
+        <item>Bus 1</item>
+        <item>Bus 2</item>
+        <item>Bus 3</item>
+        <item>Bus 4</item>
+        <item>Bus 5</item>
+        <item>Bus 6</item>
+        <item>Bus 7</item>
+        <item>Bus 8</item>
     </string-array>
 
     <string-array name="coordinator">

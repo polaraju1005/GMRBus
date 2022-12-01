@@ -8,7 +8,7 @@ class Students {
     private var phone: String = ""
     private var yos: String = ""
     private var department: String = ""
-    private var coordinator: String = ""
+    private var busNumber: String = ""
     private var password: String = ""
 
     constructor()
@@ -20,7 +20,7 @@ class Students {
         phone: String,
         yos: String,
         department: String,
-        coordinator: String,
+        busNumber: String,
         password: String
     ) {
         this.uid = uid
@@ -30,7 +30,7 @@ class Students {
         this.phone = phone
         this.yos = yos
         this.department = department
-        this.coordinator = coordinator
+        this.busNumber = busNumber
         this.password = password
     }
 
@@ -90,11 +90,11 @@ class Students {
         this.department = department
     }
 
-    fun getCoordinator(): String? {
-        return coordinator
+    fun getBusNumber(): String? {
+        return busNumber
     }
 
-    fun setCoordinator(coordinator: String) {
-        this.coordinator = coordinator
+    fun setBusNumber(busNumber: String) {
+        this.busNumber = busNumber
     }
 }

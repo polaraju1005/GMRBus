@@ -16,10 +16,6 @@ import com.google.firebase.database.FirebaseDatabase
 
 class AdminRegisterActivity : AppCompatActivity() {
 
-//    private lateinit var adLogo: ImageView
-//    lateinit var adTxtBuses: TextView
-//    lateinit var adTextHey: TextView
-//    private lateinit var imgAdmin: ImageView
     private lateinit var edtAdminName: EditText
     private lateinit var edtAdminEmail: EditText
     lateinit var etAdminPhone: EditText

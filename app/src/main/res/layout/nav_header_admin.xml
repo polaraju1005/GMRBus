@@ -2,38 +2,41 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:layout_marginTop="16dp"
     android:layout_marginStart="16dp"
-    android:background="@color/white">
-    
+    android:layout_marginTop="16dp"
+    android:id="@+id/nav_header_stu"
+    android:background="@color/white"
+    android:orientation="vertical">
+
     <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:src="@drawable/sai"/>
+        android:src="@drawable/sai" />
 
     <TextView
+        android:id="@+id/user_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/user_name"
+        android:fontFamily="@font/poppins_medium"
         android:paddingTop="8dp"
-        android:textSize="20sp"
-        android:text="Coordinator"
+        android:text="User"
         android:textColor="@color/black"
-        android:textStyle="bold"
-        android:fontFamily="@font/poppins_medium"/>
-    
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
     <TextView
+        android:id="@+id/txtUserMail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
         android:fontFamily="@font/poppins_medium"
-        android:text="coordinator@gmail.com"/>
-    
+        android:text="user@gmail.com"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginTop="30dp"
-        android:background="#BDB8B8"/>
+        android:background="#BDB8B8" />
 
 </LinearLayout>

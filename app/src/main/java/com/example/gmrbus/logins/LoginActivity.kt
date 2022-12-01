@@ -13,6 +13,7 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+        println("onCreate called")
 
         title = "Login"
 
@@ -31,5 +32,35 @@ class LoginActivity : AppCompatActivity() {
         parentButton.setOnClickListener {
             startActivity(Intent(this,ParentLogin::class.java))
         }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        print("onStart Called")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        println("onResume Called")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        println("onPause Called")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        println("onStop Called")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        println("onDestroy Called")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        println("onRestart called")
     }
 }

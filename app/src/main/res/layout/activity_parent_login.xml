@@ -6,104 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".logins.ParentLogin">
 
-<!--    <TextView-->
-<!--        android:id="@+id/txtParentHeader"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_centerHorizontal="true"-->
-<!--        android:layout_marginTop="100dp"-->
-<!--        android:fontFamily="@font/poppins_medium"-->
-<!--        android:text="Parent Login"-->
-<!--        android:textColor="#0096FF"-->
-<!--        android:textSize="25sp"-->
-<!--        android:textStyle="bold" />-->
-
-<!--    <ImageView-->
-<!--        android:id="@+id/imgProfile"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_below="@+id/txtParentHeader"-->
-<!--        android:layout_centerHorizontal="true"-->
-<!--        android:layout_marginTop="30dp"-->
-<!--        android:src="@drawable/profile" />-->
-
-<!--    <EditText-->
-<!--        android:id="@+id/etLoginParentEmail"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_below="@+id/imgProfile"-->
-<!--        android:layout_centerHorizontal="true"-->
-<!--        android:layout_marginLeft="20dp"-->
-<!--        android:layout_marginTop="40dp"-->
-<!--        android:layout_marginRight="20dp"-->
-<!--        android:background="@drawable/input_bg"-->
-<!--        android:ems="10"-->
-<!--        android:fontFamily="@font/poppins_medium"-->
-<!--        android:hint="Email"-->
-<!--        android:inputType="textEmailAddress"-->
-<!--        android:padding="10dp"-->
-<!--        android:textColorHint="#000000" />-->
-
-<!--    <EditText-->
-<!--        android:id="@+id/etLoginParentPassword"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_below="@+id/etLoginParentEmail"-->
-<!--        android:layout_centerHorizontal="true"-->
-<!--        android:layout_marginLeft="20dp"-->
-<!--        android:layout_marginTop="20dp"-->
-<!--        android:layout_marginRight="20dp"-->
-<!--        android:background="@drawable/input_bg"-->
-<!--        android:ems="10"-->
-<!--        android:fontFamily="@font/poppins_medium"-->
-<!--        android:hint="Password"-->
-<!--        android:inputType="textPassword"-->
-<!--        android:padding="10dp"-->
-<!--        android:textColorHint="#000000" />-->
-
-<!--    <TextView-->
-<!--        android:id="@+id/txtFgParentPassword"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_below="@+id/etLoginParentPassword"-->
-<!--        android:layout_centerHorizontal="true"-->
-<!--        android:layout_marginTop="10dp"-->
-<!--        android:fontFamily="@font/poppins_medium"-->
-<!--        android:text="forgot password?"-->
-<!--        android:textColor="#000000"-->
-<!--        android:textSize="18sp" />-->
-
-<!--    <androidx.constraintlayout.utils.widget.MotionButton-->
-<!--        android:id="@+id/btnParentLogin"-->
-<!--        android:layout_width="120dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_below="@+id/txtFgParentPassword"-->
-<!--        android:layout_centerHorizontal="true"-->
-<!--        android:layout_marginTop="20dp"-->
-<!--        android:background="@drawable/gradient_button"-->
-<!--        android:fontFamily="@font/poppins_medium"-->
-<!--        android:text="login"-->
-<!--        android:textColor="@color/white"-->
-<!--        android:textSize="20sp"-->
-<!--        android:textStyle="bold" />-->
-
-<!--    <TextView-->
-<!--        android:id="@+id/txtParentRegister"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_alignParentBottom="true"-->
-<!--        android:layout_centerHorizontal="true"-->
-<!--        android:layout_marginBottom="20dp"-->
-<!--        android:fontFamily="@font/poppins_medium"-->
-<!--        android:text="Don't have an account? sign up"-->
-<!--        android:textColor="#000000"-->
-<!--        android:textSize="18sp" />-->
-
     <View
         android:id="@+id/topView"
         android:layout_width="0dp"
         android:layout_height="150dp"
-        android:background="@color/parentLogin"
+        android:background="@color/adminLogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -112,7 +19,7 @@
         android:id="@+id/view2"
         android:layout_width="0dp"
         android:layout_height="100dp"
-        android:background="@drawable/greenwave"
+        android:background="@drawable/wave"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/topView" />
@@ -149,8 +56,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
-        android:background="@drawable/green_round_border"
-        android:drawableStart="@drawable/ic_parent_email"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/round_border"
+        android:drawableStart="@drawable/ic_email"
         android:drawablePadding="16dp"
         android:ems="10"
         android:fontFamily="@font/poppins_medium"
@@ -169,8 +77,8 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
-        android:background="@drawable/green_round_border"
-        android:drawableStart="@drawable/ic_parent_lock"
+        android:background="@drawable/round_border"
+        android:drawableStart="@drawable/ic_lock"
         android:drawablePadding="16dp"
         android:ems="10"
         android:fontFamily="@font/poppins_medium"
@@ -188,9 +96,8 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
-        android:backgroundTint="@color/parentLogin"
+        android:backgroundTint="@color/adminLogin"
         android:fontFamily="@font/poppins_medium"
-
         android:text="Login"
         android:textColor="@color/white"
         android:textSize="18sp"
@@ -208,7 +115,7 @@
         android:layout_marginEnd="32dp"
         android:fontFamily="@font/poppins_medium"
         android:text="FORGOT PASSWORD?"
-        android:textColor="@color/parentLogin"
+        android:textColor="@color/adminLogin"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -235,11 +142,28 @@
         android:layout_marginEnd="32dp"
         android:fontFamily="@font/poppins_medium"
         android:text="New User? Register Now"
-        android:textColor="@color/parentLogin"
+        android:textColor="@color/adminLogin"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="132dp"
+        android:fontFamily="cursive"
+        android:text="Parent"
+        android:textColor="@color/adminLogin"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/view2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

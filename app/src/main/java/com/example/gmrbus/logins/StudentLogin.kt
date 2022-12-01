@@ -9,8 +9,6 @@ import com.example.gmrbus.dashboards.student.StudentDashboard
 import com.google.firebase.auth.FirebaseAuth
 
 class StudentLogin : AppCompatActivity() {
-    lateinit var stuHeader: TextView
-    lateinit var icon: ImageView
     lateinit var email: EditText
     lateinit var password: EditText
     lateinit var forgot: TextView
@@ -27,13 +25,11 @@ class StudentLogin : AppCompatActivity() {
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        stuHeader = findViewById(R.id.txtStuHeader)
-        icon = findViewById(R.id.imgProfile)
-        email = findViewById(R.id.etLoginEmail)
-        password = findViewById(R.id.etLoginPassword)
-        forgot = findViewById(R.id.txtFgPassword)
-        loginBtn = findViewById(R.id.btnLogin)
-        signUp = findViewById(R.id.txtRegister)
+        email = findViewById(R.id.inputEmail)
+        password = findViewById(R.id.inputPassword)
+        forgot = findViewById(R.id.forgotPassword)
+        loginBtn = findViewById(R.id.btnLoginNew)
+        signUp = findViewById(R.id.gotoRegister)
         auth = FirebaseAuth.getInstance()
 
         loginBtn.setOnClickListener {

@@ -15,12 +15,6 @@
        android:layout_centerHorizontal="true"
         android:src="@drawable/gmritlogo" />
 
-<!--    <ImageView-->
-<!--        android:id="@+id/imgSilver"-->
-<!--        android:layout_width="200dp"-->
-<!--        android:layout_height="170dp"-->
-<!--        android:layout_alignParentRight="true"-->
-<!--        android:src="@drawable/silver" />-->
 
     <pl.droidsonroids.gif.GifImageView
         android:id="@+id/gifBus"
