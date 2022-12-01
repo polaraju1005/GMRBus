@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import com.example.gmrbus.R
 import com.example.gmrbus.gateway.activity.InitialScreenActivity
+import com.example.gmrbus.logins.StudentLogin
 import com.example.gmrbus.models.Students
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
@@ -77,11 +78,7 @@ class StudentDashboard : AppCompatActivity() {
                     "Clicked settings",
                     Toast.LENGTH_SHORT
                 ).show()
-                R.id.nav_logout -> Toast.makeText(
-                    applicationContext,
-                    "Clicked logout",
-                    Toast.LENGTH_SHORT
-                ).show()
+                R.id.nav_logout -> logout()
                 R.id.nav_share -> Toast.makeText(
                     applicationContext,
                     "Clicked share",
@@ -118,6 +115,13 @@ class StudentDashboard : AppCompatActivity() {
         }
 
 
+    }
+
+    private fun logout() {
+        FirebaseAuth.getInstance().signOut()
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        Toast.makeText(this, "User logged out", Toast.LENGTH_SHORT).show()
+        finish()
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
