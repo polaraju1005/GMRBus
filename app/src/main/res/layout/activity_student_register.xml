@@ -92,7 +92,7 @@
             android:drawablePadding="16dp"
             android:ems="10"
             android:fontFamily="@font/poppins_medium"
-            android:hint="Username"
+            android:hint="JNTU No/Adm No"
             android:inputType="textCapCharacters"
             android:padding="16dp"
             android:textStyle="bold" />

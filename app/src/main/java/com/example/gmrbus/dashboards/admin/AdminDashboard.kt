@@ -1,7 +1,9 @@
 package com.example.gmrbus.dashboards.admin
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -19,12 +21,15 @@ class AdminDashboard : AppCompatActivity() {
     private lateinit var databaseReference: DatabaseReference
     private lateinit var uid: String
     lateinit var coordinatorName: TextView
-    lateinit var toggle: ActionBarDrawerToggle
+    lateinit var studentData: Button
+    private lateinit var toggle: ActionBarDrawerToggle
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_admin_dashboard)
 
         title = "Dashboard"
+
+        studentData = findViewById(R.id.btnStuData)
 
         val drawerLayout: DrawerLayout = findViewById(R.id.drawerLayout)
         val navView: NavigationView = findViewById(R.id.nav_view)
@@ -80,6 +85,11 @@ class AdminDashboard : AppCompatActivity() {
         if (uid.isNotEmpty()) {
             getUserData()
         }
+
+        studentData.setOnClickListener {
+            startActivity(Intent(this@AdminDashboard,StudentDataActivity::class.java))
+        }
+
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

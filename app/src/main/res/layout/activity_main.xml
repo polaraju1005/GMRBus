@@ -15,7 +15,6 @@
        android:layout_centerHorizontal="true"
         android:src="@drawable/gmritlogo" />
 
-
     <pl.droidsonroids.gif.GifImageView
         android:id="@+id/gifBus"
         android:layout_width="330dp"

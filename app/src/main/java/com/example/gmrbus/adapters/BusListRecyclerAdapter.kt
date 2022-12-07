@@ -37,7 +37,7 @@ class BusListRecyclerAdapter(val context: BusInfoActivity, val busList: ArrayLis
         holder.itemView.setOnClickListener {
             val i = Intent(context, BusDetailsActivity::class.java)
 
-            i.putExtra("name",currentUser.getUsername())
+            i.putExtra("name", currentUser.getUsername())
 
             context.startActivity(i)
         }
