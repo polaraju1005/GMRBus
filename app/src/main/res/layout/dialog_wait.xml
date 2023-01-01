@@ -14,13 +14,13 @@
         android:textSize="11sp"
         android:fontFamily="@font/poppins_medium"/>
 
-    <com.jpardogo.android.googleprogressbar.library.GoogleProgressBar
+    <ProgressBar
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:id="@+id/google_progress"
         android:layout_margin="10dp"
+        android:progressDrawable="@drawable/giphy"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/txtViewWait"
-        gbp:type="chrome_floating_circles"/>
+        android:layout_below="@+id/txtViewWait"/>
 
 </RelativeLayout>

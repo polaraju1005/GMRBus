@@ -57,11 +57,7 @@ class AdminDashboard : AppCompatActivity() {
                     "Clicked settings",
                     Toast.LENGTH_SHORT
                 ).show()
-                R.id.nav_logout -> Toast.makeText(
-                    applicationContext,
-                    "Clicked logout",
-                    Toast.LENGTH_SHORT
-                ).show()
+                R.id.nav_logout -> logout()
                 R.id.nav_share -> Toast.makeText(
                     applicationContext,
                     "Clicked share",
@@ -92,6 +88,13 @@ class AdminDashboard : AppCompatActivity() {
 
     }
 
+    private fun logout() {
+        FirebaseAuth.getInstance().signOut()
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        Toast.makeText(this, "User logged out", Toast.LENGTH_SHORT).show()
+        finish()
+    }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (toggle.onOptionsItemSelected(item)) {
             return true
@@ -112,5 +115,6 @@ class AdminDashboard : AppCompatActivity() {
                     .show()
             }
         })
+
     }
 }

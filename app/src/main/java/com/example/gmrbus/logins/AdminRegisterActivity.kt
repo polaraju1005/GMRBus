@@ -43,6 +43,7 @@ class AdminRegisterActivity : AppCompatActivity() {
         setContentView(R.layout.activity_admin_register)
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.hide()
 
         title = "Register"
 

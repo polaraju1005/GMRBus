@@ -6,15 +6,4 @@
     android:layout_height="match_parent"
     tools:context=".dashboards.admin.SelectedStudentActivity">
 
-    <TextView
-        android:id="@+id/studentName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sai"
-        android:fontFamily="@font/poppins_medium"
-        android:layout_centerInParent="true"
-        android:textSize="20sp"
-        android:textStyle="normal"
-        android:textColor="@color/textColor"/>
-
 </RelativeLayout>

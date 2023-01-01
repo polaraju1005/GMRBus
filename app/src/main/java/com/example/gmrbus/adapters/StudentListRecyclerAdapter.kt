@@ -4,7 +4,9 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.RelativeLayout
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.example.gmrbus.R
 import com.example.gmrbus.dashboards.admin.SelectedStudentActivity
@@ -18,6 +20,7 @@ class StudentListRecyclerAdapter(
     class HomeViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var stuUserName = itemView.findViewById<TextView>(R.id.txtStuName)
         var prefix = itemView.findViewById<TextView>(R.id.txtPrefix)
+        val stack = itemView.findViewById<ConstraintLayout>(R.id.stu_recycler_view)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeViewHolder {
@@ -36,7 +39,7 @@ class StudentListRecyclerAdapter(
         holder.itemView.setOnClickListener {
             val i = Intent(context, SelectedStudentActivity::class.java)
 
-            i.putExtra("name", currentUser.getUsername())
+            i.putExtra("name1", currentUser.getUsername())
 
             context.startActivity(i)
         }

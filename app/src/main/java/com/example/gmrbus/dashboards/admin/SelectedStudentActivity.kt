@@ -12,9 +12,9 @@ class SelectedStudentActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_selected_student)
 
-//    val name = intent.getStringExtra("name")
+   val name = intent.getStringExtra("name1")
 //
-//    supportActionBar?.title = name
+    supportActionBar?.title = name
 //        studentName = findViewById(R.id.studentName)
 //
 //        var intent = intent.extras
